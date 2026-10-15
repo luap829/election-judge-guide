@@ -49,11 +49,14 @@
   }
   const linkCard = (to, label) => `<a class="card" href="${href(to)}">${esc(label || titleOf(to))}${cite(citeOf(to))}</a>`;
   function addrHtml() { const j = C.jurisdiction; return `<div class="card"><b>${esc(j.division)}</b><br>${j.address.map(esc).join('<br>')}<br><a href="tel:${esc(j.phone)}">${esc(j.phoneDisplay)}</a>${cite('Phone: ' + j.phoneCite + ' · Address: ' + j.addressCite)}</div>`; }
+  function listHtml(items) { return `<ul>${items.map((i) => typeof i === 'string' ? `<li>${esc(i)}</li>` : `<li>${esc(i.text)}${listHtml(i.sub)}</li>`).join('')}</ul>`; }
   function block(b) {
     switch (b.t) {
       case 'p': return `<p>${esc(b.text)}</p>`;
       case 'h': return `<h3>${esc(b.text)}</h3>`;
-      case 'list': return `<ul>${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
+      case 'list': return listHtml(b.items);
+      case 'h4': return `<h4>${esc(b.text)}</h4>`;
+      case 'cite': return cite(b.text);
       case 'steps': return `<ol class="steps">${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
       case 'alert': return `<div class="alert ${b.kind}" ${b.kind === 'critical' ? 'role="alert"' : ''}><b>${{ info: 'ⓘ ', warning: '⚠ ', critical: '⛔ ' }[b.kind]}${esc(b.title)}</b>${esc(b.text)}</div>`;
       case 'table': return `<table><thead><tr>${b.rows[0].map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
@@ -105,15 +108,16 @@
   function setActive() {
     const h = location.hash.replace(/^#\/?/, '');
     const home = !h; const ph = h.startsWith('phase/');
-    $('#navHome').toggleAttribute('aria-current', false); $('#navPhases').toggleAttribute('aria-current', false);
-    if (home) $('#navHome').setAttribute('aria-current', 'page'); else if (ph) $('#navPhases').setAttribute('aria-current', 'page');
+    $('#navHome').toggleAttribute('aria-current', false); $('#navPhases').toggleAttribute('aria-current', false); $('#navRoles').toggleAttribute('aria-current', false);
+    if (home) $('#navHome').setAttribute('aria-current', 'page'); else if (ph) $('#navPhases').setAttribute('aria-current', 'page'); else if (h === 'roles') $('#navRoles').setAttribute('aria-current', 'page');
   }
   /* ---------- splash: every cold launch, never auto-advances ---------- */
   function showSplash() {
     const s = C.splash;
     $('#splashTitle').textContent = s.heading;
-    $('#splashQuote').innerHTML = `\u201C${esc(s.quote)}\u201D<span class="cite">${esc(s.cite)}</span>`;
-    $('#splashGo').textContent = s.button;
+    $('#splashQuote').innerHTML = `<h2>${esc(s.title)}</h2>${listHtml(s.conduct)}${cite(s.cite)}`;
+    $('#splashGo').textContent = s.button; $('#splashRoles').textContent = s.rolesLabel;
+    $('#splashRoles').onclick = () => { $('#splash').hidden = true; if (location.hash === '#/roles') route(); else location.hash = '#/roles'; };
     $('#splash').hidden = false; $('#splashGo').focus();
     $('#splashGo').onclick = () => { $('#splash').hidden = true; if (location.hash && location.hash !== '#/') location.hash = '#/'; else route(); view.focus({ preventScroll: true }); };
   }
@@ -181,7 +185,7 @@
   function route() {
     const h = location.hash.replace(/^#\/?/, '').split('/');
     closeSheet();
-    if (!h[0]) home(); else if (h[0] === 'phase') phase(h[1]); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
+    if (!h[0]) home(); else if (h[0] === 'phase') phase(h[1]); else if (h[0] === 'roles') screen('roles'); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
     else if (h[0] === 'flow') flow(h[1], h[2]); else if (h[0] === 'search') search(); else if (h[0] === 'about') screen('about'); else notFound();
     const ra = $('#resetAll'); if (ra) ra.onclick = () => { if (confirm('Reset all checklists?')) Object.keys(C.checklists).forEach((k) => store.set('check:' + k, [])); };
     setActive(); window.scrollTo(0, 0); if ($('#splash').hidden) view.focus({ preventScroll: true });

@@ -18,8 +18,24 @@
  },
  "splash": {
   "heading": "Unofficial DuPage Election Judge Field Guide",
-  "quote": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks.",
-  "cite": "Manual 8",
+  "title": "Election Judge Conduct",
+  "conduct": [
+   "Conduct yourself in a professional manner.",
+   "No profanity or foul language.",
+   "Do not converse about the Election, campaigns, candidates, or Voters with fellow judges, Voters or Pollwatchers.",
+   "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks.",
+   "Food or drink is not permitted at workstations.",
+   {
+    "text": "Do not participate in any form of Electioneering:",
+    "sub": [
+     "Do not wear campaign buttons, ribbons, distinctive colors identifying with a specific party, candidate, civic organization or opinion that is on the ballot.",
+     "Do not distribute literature in or outside the Polling Place.",
+     "Do not maintain Voter records for any party, candidate, or civic organization."
+    ]
+   }
+  ],
+  "rolesLabel": "Election Judge Roles and Responsibilities",
+  "cite": "Manual 9",
   "button": "I understand, continue"
  },
  "notice": "Not produced or endorsed by DuPage County. Based on the Nov 2026 Election Judge Manual; paper materials govern.",
@@ -831,6 +847,349 @@
     },
     {
      "t": "addr"
+    }
+   ]
+  },
+  "roles": {
+   "title": "Election Judge Roles and Responsibilities",
+   "cite": "Manual 5–9",
+   "tab": "",
+   "blocks": [
+    {
+     "t": "h",
+     "text": "Election Judges (Manual 5)"
+    },
+    {
+     "t": "p",
+     "text": "Election Judges play a vital role in the Election process. Election Judges are responsible for the administration of Election procedures in the Polling Place on Election Day. Judges work together to ensure that the Election process is administered fairly and in accordance with the law."
+    },
+    {
+     "t": "h4",
+     "text": "Qualifications"
+    },
+    {
+     "t": "p",
+     "text": "Election Judges must meet the following criteria:"
+    },
+    {
+     "t": "list",
+     "items": [
+      "be citizens of the United States and entitled to vote at the next Election.",
+      "A registered Voter in DuPage County.",
+      "be of good repute and character and not subject to the registration requirement of the Sex Offender Registration Act (730 ILCS 150/1)",
+      "be able to speak, read, and write the English language.",
+      "be skilled in the four fundamental rules of arithmetic.",
+      "be of good understanding and capable.",
+      "not be candidates for any office at the Election."
+     ]
+    },
+    {
+     "t": "h4",
+     "text": "Requirements To Serve"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Declare your political party affiliation as Democrat or Republican.",
+      "Attend an In-Person training class.",
+      "Complete online training and pass a quiz.",
+      "Be able to lift 30 LBS.",
+      "Be able to operate voting equipment. (tablet, printers, scanner, etc.)",
+      "Be able to stand for moderate periods of time.",
+      "Be able to rotate to various positions throughout the day.",
+      "Participate in Polling Place setup the night before the Election. (Approximately 2 hours)",
+      "Arrive by 5:00 AM on Election Day to serve in appointed Polling Place.",
+      "Remain at the Polling Place until all forms, certificates, and affidavits are completed and signed, and all equipment and Election materials are packed and secured for post-Election pickup."
+     ]
+    },
+    {
+     "t": "h4",
+     "text": "Duties"
+    },
+    {
+     "t": "p",
+     "text": "Election Judge duties include, but are not limited to the following:"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Setup Polling Place the night before Election Day.",
+      "Open and Close polls.",
+      "Check in Voters.",
+      "Issue correct Ballot to Voters.",
+      "Ensure only qualified Voters are permitted to vote, and that each qualified Voter only votes once, and that all votes are cast in secret.",
+      "Oversee the voting process.",
+      "Give instructions on the method of voting when requested by a Voter.",
+      "Provide assistance to Voters when required.",
+      "Keep all unauthorized persons away from voting equipment.",
+      "Maintain security of all Election materials.",
+      "Maintain order in the Polling Place throughout the day.",
+      "Maintain a Campaign-Free zone.",
+      "Remove any campaign literature left by Voters.",
+      "Read, complete, and sign all Election forms, certificates, and affidavits according to instructions.",
+      "Pack and secure equipment for post-Election pickup.",
+      "Return supplies – Two judges, one from each party, are required to return supplies in the same vehicle to the Election Division on Election night after the polls close.",
+      "Leave the Polling Place room in the same condition as when you arrived."
+     ]
+    },
+    {
+     "t": "h4",
+     "text": "Election Judge Pay"
+    },
+    {
+     "t": "list",
+     "items": [
+      "$250 Flat rate for all judges",
+      "Supply Pickup (1-Pickup Judge) additional $30.",
+      "Supply Return (Bipartisan team of 2 judges) additional $30/each judge.",
+      "H.S. Student Judges may not pickup or return supplies.",
+      "Social Security number is required to issue a paycheck.",
+      "Paychecks will be mailed 6 – 8 weeks after Election Day."
+     ]
+    },
+    {
+     "t": "cite",
+     "text": "Manual 5"
+    },
+    {
+     "t": "h",
+     "text": "Election Judge Roles (Manual 6)"
+    },
+    {
+     "t": "h4",
+     "text": "Bipartisanship"
+    },
+    {
+     "t": "p",
+     "text": "Each Polling Place is staffed with a bipartisan team of Election Judges who work together to ensure the accuracy and integrity of the Election process."
+    },
+    {
+     "t": "list",
+     "items": [
+      "All signature verification and form sign offs are done by judges from both parties.",
+      "Election supplies are returned to the Election Division office by two Election Judges, one from each party, riding in the same vehicle."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Polling Places must have representation from both parties in order to be operating. If your Polling Place is missing representation of a party, call the Election Division immediately at (630) 407-5577 or attempt to recruit a Voter of that party to serve as an Election Judge."
+    },
+    {
+     "t": "h4",
+     "text": "No “Head” Judge"
+    },
+    {
+     "t": "p",
+     "text": "All Election Judges have equal authority. There is no head judge. However, Field Representatives and Pickup Judges have additional responsibilities that are key to a successful Election."
+    },
+    {
+     "t": "h4",
+     "text": "Field Representatives"
+    },
+    {
+     "t": "p",
+     "text": "Field Representatives serve as a link between the Election Division and Polling Places on Election Day. Field reps visit their assigned Polling Places to lend support to Election Judges."
+    },
+    {
+     "t": "list",
+     "items": [
+      "Requirements: Must have served as an Election Judge for a minimum of (4) Elections.",
+      "Pay: $350 plus mileage for Election Day.",
+      "Hours: Election Day starting at 5:00 AM until all designated Polling Places have left to return materials to Election Division on Election Night."
+     ]
+    },
+    {
+     "t": "h4",
+     "text": "Pickup Judge"
+    },
+    {
+     "t": "p",
+     "text": "Each Polling Place is assigned a Pickup Judge. In addition to aforementioned Election Judge duties, Pickup Judges are responsible for:"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Contacting the Polling Place facility to arrange access into the building on Monday night and Tuesday morning. This may include picking up keys from the facility.",
+      "Contacting the team of judges serving in the assigned Polling Place to let them know what time to arrive on Monday night for setup .",
+      "Pickup supplies from the Election Division office on the Friday or Saturday before Election Day. Additional Pay $30 .",
+      "Return supplies to the Election Division after the polls close with a judge of the opposite party in the same vehicle. Additional Pay $30 ."
+     ]
+    },
+    {
+     "t": "cite",
+     "text": "Manual 6"
+    },
+    {
+     "t": "h",
+     "text": "Student Election Judges (Manual 7)"
+    },
+    {
+     "t": "h4",
+     "text": "High School Student Election Judges"
+    },
+    {
+     "t": "p",
+     "text": "Illinois statute 10 ILCS 5/13-4 provides the opportunity for High School Juniors and Seniors who are not otherwise entitled to vote to be appointed as Election Judges if they live in DuPage County and meet the appropriate criteria."
+    },
+    {
+     "t": "p",
+     "text": "Qualifications — Student Judges must meet the following criteria:"
+    },
+    {
+     "t": "list",
+     "items": [
+      "A citizen of the United States.",
+      "A resident of DuPage County, Illinois.",
+      "A High School Junior or Senior in good standing.",
+      "Be able to read, write, and speak the English language.",
+      "Be skilled in the four fundamental rules of arithmetic.",
+      "Maintain a grade point average of 3.0 on a 4.0 scale."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Requirements:"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Be nominated by a High School Teacher or Principal.",
+      "Must receive written approval from a parent or guardian.",
+      "Declare party as Democrat or Republican to support duties performed by a bipartisan team of judges.",
+      "Complete online training course certification and pass a quiz.",
+      "Arrive by 5:00 AM on Election Day to serve in appointed Polling Place.",
+      "Remain at the Polling Place until all forms, certificates, and affidavits are completed and signed, and all equipment and Election materials are packed and secured for post-Election pickup."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Duties — High School Student Election Judges perform the same duties as all Election Judges with the exception that they may not pickup or return supplies to the Election Division Office."
+    },
+    {
+     "t": "h4",
+     "text": "College Student Election Judge"
+    },
+    {
+     "t": "p",
+     "text": "Illinois statute 10 ILCS 5/13-4 permits a person who is not entitled to vote in that precinct or county to be appointed as an Election Judge if, as of the date of the Election the following criteria is met."
+    },
+    {
+     "t": "list",
+     "items": [
+      "A citizen of the United States.",
+      "Currently enrolled in a community college, or a public or private DuPage County university or college.",
+      "Have a cumulative grade point average equivalent to at least 3.0 on a 4.0 scale.",
+      "Have satisfactorily completed the Election Judge training courses.",
+      "Participate in Polling Place setup the night before the Election.",
+      "Arrive by 5:00 AM on Election Day to serve in appointed Polling Place."
+     ]
+    },
+    {
+     "t": "cite",
+     "text": "Manual 7"
+    },
+    {
+     "t": "h",
+     "text": "Election Judge Guidelines (Manual 8)"
+    },
+    {
+     "t": "h4",
+     "text": "Schedule and Breaks"
+    },
+    {
+     "t": "list",
+     "items": [
+      "MONDAY: Election Supply Cabinet (ESC) will be delivered to Polling Places between 8:00 AM—4:30 PM.",
+      "MONDAY NIGHT: All Election Judges must participate in Polling Place setup*. Pickup Judges will contact Election Judges one to two weeks prior to the Election to let them know the time and place for setup. *Exception—Election Judges that work Early Voting on Monday are not required to attend Monday Night setup.",
+      "TUESDAY/ELECTION DAY: All Election Judges are must arrive to their assigned Polling Place by 5:00 AM and remain on duty until all closing tasks are complete. This includes securing and packing Election materials for pickup. The Pickup Judge and a judge of the opposite party, will return designated supplies to the Election Division in the same vehicle. after all forms, certificates, and",
+      "Election Judges are responsible for the security and chain of custody of Election materials. Therefore, Election Judges are required to remain at their Polling Place for the entire day.",
+      "Election Judges should plan on bringing beverages, snacks, and meals on Election Day. Meals and breaks must be taken away from the Election workstations."
+     ]
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Polling hours",
+     "text": "6:00 AM — 7:00 PM"
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Manual text is cut off",
+     "text": "The Tuesday item above ends mid-sentence (“after all forms, certificates, and”) in the manual itself. Confirm with county."
+    },
+    {
+     "t": "h4",
+     "text": "Dress Code"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Business Casual.",
+      "Presentable and appropriate attire.",
+      "No buttons, t-shirts, hats, or other items to be considered Electioneering."
+     ]
+    },
+    {
+     "t": "h4",
+     "text": "Election Division Cell Phone"
+    },
+    {
+     "t": "p",
+     "text": "A cell phone will be provided in the Pickup Judge supply packet to be used to communicate with the Election Division during Monday night setup and on Election Day. The Pickup Judge should fully charge the cell phone upon picking up supplies."
+    },
+    {
+     "t": "list",
+     "items": [
+      "Cell phone must be answered. This is how the Election Division will reach judges at the Polling Place if needed.",
+      "Use the phone provided (not your personal cell phone) to contact the Election Division on Monday night during setup or on Election Day."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Election Division (630) 407-5577"
+    },
+    {
+     "t": "cite",
+     "text": "Manual 8"
+    },
+    {
+     "t": "h",
+     "text": "Election Judge Guidelines (Manual 9)"
+    },
+    {
+     "t": "h4",
+     "text": "Election Judge Conduct"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Conduct yourself in a professional manner.",
+      "No profanity or foul language.",
+      "Do not converse about the Election, campaigns, candidates, or Voters with fellow judges, Voters or Pollwatchers.",
+      "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks.",
+      "Food or drink is not permitted at workstations.",
+      {
+       "text": "Do not participate in any form of Electioneering:",
+       "sub": [
+        "Do not wear campaign buttons, ribbons, distinctive colors identifying with a specific party, candidate, civic organization or opinion that is on the ballot.",
+        "Do not distribute literature in or outside the Polling Place.",
+        "Do not maintain Voter records for any party, candidate, or civic organization."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "h4",
+     "text": "Election Judge Voting"
+    },
+    {
+     "t": "p",
+     "text": "‘Vote Anywhere’ allows Voters and Election Judges to conveniently cast a Ballot at any Polling Place in DuPage County. Election Day Polling Places may become busy, so Election Judges are encouraged to Vote-By-Mail or during the Early Voting period prior to Election Day."
+    },
+    {
+     "t": "cite",
+     "text": "Manual 9"
     }
    ]
   },

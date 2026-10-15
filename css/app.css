@@ -60,7 +60,7 @@ th{background:var(--surface-2)}
 .tiles .tile:last-child:nth-child(odd){grid-column:1 / -1}
 blockquote{margin:12px 0;padding:0 0 0 14px;border-left:4px solid var(--border);font-size:var(--fs-base)}
 .navbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;background:var(--nav-bg);border-top:1px solid var(--nav-border);min-height:calc(var(--callbar-h) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom)}
-.navitem{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:var(--callbar-h);min-width:var(--tap-min);background:none;border:0;border-top:3px solid transparent;color:var(--nav-item);font:inherit;font-size:var(--fs-sm);text-decoration:none;cursor:pointer}
+.navitem{flex:1 1 0;padding:0 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:var(--callbar-h);min-width:var(--tap-min);background:none;border:0;border-top:3px solid transparent;color:var(--nav-item);font:inherit;font-size:var(--fs-sm);text-decoration:none;cursor:pointer}
 .navitem svg{width:26px;height:26px}
 .navitem[aria-current=page]{color:var(--nav-active);border-top-color:var(--nav-active);font-weight:var(--fw-semibold)}
 .navitem.call{color:var(--text)}
@@ -69,9 +69,16 @@ blockquote{margin:12px 0;padding:0 0 0 14px;border-left:4px solid var(--border);
 .sheet{position:fixed;left:0;right:0;bottom:calc(var(--callbar-h) + env(safe-area-inset-bottom));z-index:31;max-height:calc(85vh - var(--callbar-h));overflow:auto;background:var(--surface);border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:12px 16px 16px;box-shadow:var(--shadow)}
 .sheethead{display:flex;align-items:center;justify-content:space-between}
 .sheethead h2{margin:0}
-.splash{position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;display:flex;align-items:center;justify-content:center;padding:24px 16px calc(24px + env(safe-area-inset-bottom))}
+.splash{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center}
+.splashin{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:24px 16px 8px;padding-top:calc(24px + env(safe-area-inset-top))}
+.splashactions{flex:0 0 auto;width:100%;max-width:32rem;padding:8px 16px calc(12px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--divider)}
+.splashactions .btn{margin:6px 0}
+.splashlist h2{font-size:var(--fs-xl)}
+.splashlist ul ul{list-style:disc}
 .splash[hidden]{display:none}
 .splashin{max-width:32rem;width:100%}
 .splashin img{border-radius:20px;display:block;margin:0 auto 12px}
 .splashin h1{font-size:var(--fs-2xl);text-align:center;margin:0 0 8px}
 .navitem.call svg path{stroke:var(--call-icon)}
+h4{font-size:var(--fs-lg);margin:1em 0 .3em}
+@media (max-width:360px){.navitem{font-size:var(--fs-xs)}}
