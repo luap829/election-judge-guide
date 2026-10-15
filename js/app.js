@@ -60,7 +60,6 @@
       case 'list': return listHtml(b.items);
       case 'h4': return `<h4>${esc(b.text)}</h4>`;
       case 'cite': return cite(b.text);
-      case 'details': return `<details class="sect"><summary><span class="${b.summaryLevel === 'h3' ? 'sum3' : 'sum4'}">${esc(b.summary)}</span></summary><div class="sectbody">${b.blocks.map(block).join('')}</div></details>`;
       case 'steps': return `<ol class="steps">${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
       case 'alert': return `<div class="alert ${b.kind}" ${b.kind === 'critical' ? 'role="alert"' : ''}><b>${{ info: 'ⓘ ', warning: '⚠ ', critical: '⛔ ' }[b.kind]}${esc(b.title)}</b>${esc(b.text)}</div>`;
       case 'table': return `<table><thead><tr>${b.rows[0].map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
@@ -77,6 +76,7 @@
   function home() {
     setTop(CFG.shortName + ' Election Judge Field Guide', false);
     view.innerHTML = `
+      <a class="rolestile" href="#/roles" aria-label="${esc(C.splash.rolesLabel)}"><span>${esc(C.splash.rolesLabel)}</span><span class="chev" aria-hidden="true">›</span></a>
       <div class="tiles">${C.tabs.map((x) => `<a class="tile" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('')}</div>
       ${linkCard('emergency', 'Emergency, weather, injury')}
       ${addrHtml()}
@@ -120,8 +120,7 @@
     const s = C.splash;
     $('#splashTitle').textContent = s.heading;
     $('#splashQuote').innerHTML = `<h2>${esc(s.title)}</h2>${listHtml(s.conduct)}${cite(s.cite)}`;
-    $('#splashGo').textContent = s.button; $('#splashRoles').textContent = s.rolesLabel;
-    $('#splashRoles').onclick = () => { $('#splash').hidden = true; if (location.hash === '#/roles') route(); else location.hash = '#/roles'; };
+    $('#splashGo').textContent = s.button;
     $('#splash').hidden = false; $('#splashGo').focus();
     $('#splashGo').onclick = () => { $('#splash').hidden = true; if (location.hash && location.hash !== '#/') location.hash = '#/'; else route(); view.focus({ preventScroll: true }); };
   }
