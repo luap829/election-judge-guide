@@ -210,7 +210,7 @@
   },
   "vote-anywhere": {
    "title": "Vote Anywhere",
-   "cite": "Manual 8",
+   "cite": "Manual 9",
    "tab": "during",
    "blocks": [
     {
@@ -239,14 +239,14 @@
   },
   "phone-use": {
    "title": "Phones and this app",
-   "cite": "Manual 8, 28",
+   "cite": "Manual 8, 9, 28",
    "tab": "before",
    "blocks": [
     {
      "t": "alert",
      "kind": "warning",
      "title": "No personal phones at workstations",
-     "text": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks. (Manual 8)"
+     "text": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks. (Manual 9)"
     },
     {
      "t": "p",
