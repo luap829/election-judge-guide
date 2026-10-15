@@ -36,13 +36,16 @@
 
   /* ---------- helpers ---------- */
   const cite = (c) => c ? `<span class="cite">${esc(c)}</span>` : '';
-  function href(to) { if (to.startsWith('check:')) return '#/check/' + to.slice(6); if (to.startsWith('flow:')) return '#/flow/' + to.slice(5); return '#/s/' + to; }
+  function href(to) { if (to.startsWith('roles/')) return '#/' + to; return href0(to); }
+  function href0(to) { if (to.startsWith('check:')) return '#/check/' + to.slice(6); if (to.startsWith('flow:')) return '#/flow/' + to.slice(5); return '#/s/' + to; }
   function titleOf(to) {
+    if (to.startsWith('roles/')) return C.roles.sections.find((s) => 'roles/' + s.id === to).title;
     if (to.startsWith('check:')) return C.checklists[to.slice(6)].title;
     if (to.startsWith('flow:')) return C.flows[to.slice(5)].title;
     return C.screens[to].title;
   }
   function citeOf(to) {
+    if (to.startsWith('roles/')) return C.roles.sections.find((s) => 'roles/' + s.id === to).cite;
     if (to.startsWith('check:')) return C.checklists[to.slice(6)].cite;
     if (to.startsWith('flow:')) return C.flows[to.slice(5)].cite;
     return C.screens[to].cite;
@@ -57,6 +60,7 @@
       case 'list': return listHtml(b.items);
       case 'h4': return `<h4>${esc(b.text)}</h4>`;
       case 'cite': return cite(b.text);
+      case 'details': return `<details class="sect"><summary><span class="${b.summaryLevel === 'h3' ? 'sum3' : 'sum4'}">${esc(b.summary)}</span></summary><div class="sectbody">${b.blocks.map(block).join('')}</div></details>`;
       case 'steps': return `<ol class="steps">${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
       case 'alert': return `<div class="alert ${b.kind}" ${b.kind === 'critical' ? 'role="alert"' : ''}><b>${{ info: 'ⓘ ', warning: '⚠ ', critical: '⛔ ' }[b.kind]}${esc(b.title)}</b>${esc(b.text)}</div>`;
       case 'table': return `<table><thead><tr>${b.rows[0].map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
@@ -109,7 +113,7 @@
     const h = location.hash.replace(/^#\/?/, '');
     const home = !h; const ph = h.startsWith('phase/');
     $('#navHome').toggleAttribute('aria-current', false); $('#navPhases').toggleAttribute('aria-current', false); $('#navRoles').toggleAttribute('aria-current', false);
-    if (home) $('#navHome').setAttribute('aria-current', 'page'); else if (ph) $('#navPhases').setAttribute('aria-current', 'page'); else if (h === 'roles') $('#navRoles').setAttribute('aria-current', 'page');
+    if (home) $('#navHome').setAttribute('aria-current', 'page'); else if (ph) $('#navPhases').setAttribute('aria-current', 'page'); else if (h === 'roles' || h.startsWith('roles/')) $('#navRoles').setAttribute('aria-current', 'page');
   }
   /* ---------- splash: every cold launch, never auto-advances ---------- */
   function showSplash() {
@@ -165,6 +169,7 @@
     setTop('Search', true);
     view.innerHTML = `<h2>Search</h2><input class="search" id="q" type="search" placeholder="e.g. provisional, seal, ID" aria-label="Search"><div id="res"></div>`;
     const items = Object.keys(C.screens).map((k) => [k, C.screens[k]]).concat(Object.keys(C.checklists).map((k) => ['check:' + k, C.checklists[k]])).concat(Object.keys(C.flows).map((k) => ['flow:' + k, C.flows[k]]));
+    items.push(...C.roles.sections.map((s) => ['roles/' + s.id, s]));
     const q = $('#q'); q.oninput = () => { const v = q.value.trim().toLowerCase(); $('#res').innerHTML = v.length < 2 ? '' : items.filter(([, o]) => textOf(o).includes(v)).map(([k]) => linkCard(k)).join('') || '<p>No matches.</p>'; };
     q.focus();
   }
@@ -180,12 +185,22 @@
       <p>Draft for review by the ${esc(j.division)} before public release. Template: jurisdiction content lives in content.json and county-config.json.</p>
       <button class="btn secondary" id="resetAll">Reset all checklists</button>`;
   }
+  function rolesMenu() {
+    const R = C.roles; setTop(R.title, false);
+    view.innerHTML = `<h2>${esc(R.title)}</h2>${R.intro.map(block).join('')}${cite(R.introCite)}
+      <nav aria-label="Roles sections">${R.sections.map((s) => `<a class="card rolelink" href="#/roles/${s.id}"><span>${esc(s.title)}</span><span class="cite">${esc(s.cite)}</span></a>`).join('')}</nav>${cite(R.cite)}`;
+  }
+  function roleDetail(id) {
+    const s = C.roles.sections.find((x) => x.id === id); if (!s) return notFound();
+    setTop(s.title, true);
+    view.innerHTML = `<a class="btn text backroles" href="#/roles">\u2039 Roles menu</a><h2>${esc(s.title)}</h2>${s.blocks.map(block).join('')}${cite(s.cite)}<a class="btn secondary" href="#/roles">Back to Roles</a>`;
+  }
   function notFound() { setTop('Not found', true); view.innerHTML = '<p>Page not found.</p><a class="btn primary" href="#/">Home</a>'; }
 
   function route() {
     const h = location.hash.replace(/^#\/?/, '').split('/');
     closeSheet();
-    if (!h[0]) home(); else if (h[0] === 'phase') phase(h[1]); else if (h[0] === 'roles') screen('roles'); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
+    if (!h[0]) home(); else if (h[0] === 'phase') phase(h[1]); else if (h[0] === 'roles') (h[1] ? roleDetail(h[1]) : rolesMenu()); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
     else if (h[0] === 'flow') flow(h[1], h[2]); else if (h[0] === 'search') search(); else if (h[0] === 'about') screen('about'); else notFound();
     const ra = $('#resetAll'); if (ra) ra.onclick = () => { if (confirm('Reset all checklists?')) Object.keys(C.checklists).forEach((k) => store.set('check:' + k, [])); };
     setActive(); window.scrollTo(0, 0); if ($('#splash').hidden) view.focus({ preventScroll: true });
