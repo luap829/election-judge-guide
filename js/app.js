@@ -71,7 +71,6 @@
     setTop(CFG.shortName + ' Election Judge Field Guide', false);
     view.innerHTML = `
       <div class="tiles">${C.tabs.map((x) => `<a class="tile" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('')}</div>
-      <div class="alert info"><b>ⓘ ${esc(C.splash.heading)}</b>${quoteHtml()}</div>
       ${linkCard('emergency', 'Emergency, weather, injury')}
       ${addrHtml()}
       <h3>Quick tools</h3>
