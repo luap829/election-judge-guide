@@ -1,0 +1,163 @@
+/* Election Judge Field Guide app shell. Generic: all jurisdiction content comes from
+   data/content.json and data/county-config.json. No network calls beyond same-origin precached files. */
+'use strict';
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const view = $('#view');
+  let C = null, CFG = null;
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const store = { get(k, d) { try { return JSON.parse(localStorage.getItem('ejfg:' + k)) ?? d; } catch (e) { return d; } },
+                  set(k, v) { try { localStorage.setItem('ejfg:' + k, JSON.stringify(v)); } catch (e) {} } };
+
+  /* ---------- theming (design-spec §7) ---------- */
+  const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const lum = (h) => { const c = hex(h).map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]; };
+  const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+  const mix = (a, b, t) => '#' + hex(a).map((v, i) => Math.round(v * t + hex(b)[i] * (1 - t)).toString(16).padStart(2, '0')).join('');
+  function isDark() { const t = document.documentElement.dataset.theme; return t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches); }
+  function applyTheme() {
+    if (!CFG) return;
+    const dark = isDark(), acc = dark ? (CFG.accentDark || CFG.accent) : CFG.accent;
+    const on = ratio(acc, '#FFFFFF') >= ratio(acc, '#0F1318') ? '#FFFFFF' : '#0F1318';
+    const r = document.documentElement.style;
+    r.setProperty('--accent', acc); r.setProperty('--on-accent', on); r.setProperty('--focus', acc);
+    r.setProperty('--accent-soft', dark ? mix(acc, '#0F1318', 0.2) : mix(acc, '#F7F8FA', 0.1));
+    document.querySelector('meta[name=theme-color]').content = dark ? '#0F1318' : '#F7F8FA';
+  }
+  function initTheme() {
+    const t = store.get('theme', 'auto'); if (t !== 'auto') document.documentElement.dataset.theme = t;
+    $('#themeBtn').onclick = () => {
+      const order = ['auto', 'light', 'dark']; const n = order[(order.indexOf(store.get('theme', 'auto')) + 1) % 3];
+      store.set('theme', n); if (n === 'auto') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = n;
+      $('#themeBtn').setAttribute('aria-label', 'Theme: ' + n); applyTheme();
+    };
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+  }
+
+  /* ---------- helpers ---------- */
+  const cite = (c) => c ? `<span class="cite">${esc(c)}</span>` : '';
+  function href(to) { if (to.startsWith('check:')) return '#/check/' + to.slice(6); if (to.startsWith('flow:')) return '#/flow/' + to.slice(5); return '#/s/' + to; }
+  function titleOf(to) {
+    if (to.startsWith('check:')) return C.checklists[to.slice(6)].title;
+    if (to.startsWith('flow:')) return C.flows[to.slice(5)].title;
+    return C.screens[to].title;
+  }
+  function citeOf(to) {
+    if (to.startsWith('check:')) return C.checklists[to.slice(6)].cite;
+    if (to.startsWith('flow:')) return C.flows[to.slice(5)].cite;
+    return C.screens[to].cite;
+  }
+  const linkCard = (to, label) => `<a class="card" href="${href(to)}">${esc(label || titleOf(to))}${cite(citeOf(to))}</a>`;
+  function addrHtml() { const j = C.jurisdiction; return `<div class="card"><b>${esc(j.division)}</b><br>${j.address.map(esc).join('<br>')}<br><a href="tel:${esc(j.phone)}">${esc(j.phoneDisplay)}</a>${cite('Phone: ' + j.phoneCite + ' · Address: ' + j.addressCite)}</div>`; }
+  function block(b) {
+    switch (b.t) {
+      case 'p': return `<p>${esc(b.text)}</p>`;
+      case 'h': return `<h3>${esc(b.text)}</h3>`;
+      case 'list': return `<ul>${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
+      case 'steps': return `<ol class="steps">${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
+      case 'alert': return `<div class="alert ${b.kind}" ${b.kind === 'critical' ? 'role="alert"' : ''}><b>${{ info: 'ⓘ ', warning: '⚠ ', critical: '⛔ ' }[b.kind]}${esc(b.title)}</b>${esc(b.text)}</div>`;
+      case 'table': return `<table><thead><tr>${b.rows[0].map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      case 'link': return linkCard(b.to, b.label);
+      case 'addr': return addrHtml();
+      case 'about': return aboutHtml();
+    }
+    return '';
+  }
+  function setTop(title, back) { $('#topTitle').textContent = title; $('#backBtn').hidden = !back; document.title = title + ' · ' + CFG.appName; }
+
+  /* ---------- views ---------- */
+  function home() {
+    setTop(CFG.shortName + ' Election Judge Field Guide', false);
+    const tab = store.get('tab', 'during');
+    const t = C.tabs.find((x) => x.id === tab) || C.tabs[0];
+    view.innerHTML = `
+      <div class="alert info"><b>ⓘ Study tool</b>Personal phones are not allowed at workstations; use this guide before Election Day and on breaks. Paper materials govern. ${cite('Manual 8')}</div>
+      ${linkCard('emergency', 'Emergency, weather, injury')}
+      ${addrHtml()}
+      <div class="tabs" role="tablist">${C.tabs.map((x) => `<button role="tab" data-tab="${x.id}" aria-selected="${x.id === t.id}">${esc(x.label)}</button>`).join('')}</div>
+      <div>${t.items.map((i) => linkCard(i)).join('')}</div>
+      <h3>Quick tools</h3>
+      <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}<span class="cite">Manual ${esc(q.cite)}</span></a>`).join('')}</div>
+      <div class="footer"><a class="btn secondary" href="#/s/who-allowed">Who's allowed</a><a class="btn secondary" href="#/search">Search</a><a class="btn secondary" href="#/about">About</a></div>`;
+    view.querySelectorAll('[data-tab]').forEach((b) => b.onclick = () => { store.set('tab', b.dataset.tab); home(); });
+  }
+  function screen(id) {
+    const s = C.screens[id]; if (!s) return notFound();
+    setTop(s.title, true);
+    view.innerHTML = `<h2>${esc(s.title)}</h2>${s.blocks.map(block).join('')}${cite(s.cite)}`;
+  }
+  function checklist(id) {
+    const c = C.checklists[id]; if (!c) return notFound();
+    setTop(c.title, true);
+    const done = store.get('check:' + id, []);
+    const cur = c.items.findIndex((_, i) => !done.includes(i));
+    view.innerHTML = `<h2>${esc(c.title)}</h2><p class="crumbs">${done.length} of ${c.items.length} done · check-offs stay on this device only</p>
+      ${c.items.map((it, i) => `<div class="check ${done.includes(i) ? 'done' : ''} ${i === cur ? 'current' : ''}" role="checkbox" tabindex="0" aria-checked="${done.includes(i)}" ${i === cur ? 'aria-current="step"' : ''} data-i="${i}"><span class="n">${i + 1}</span><span class="tx">${esc(it)}</span><span class="c"><span>${done.includes(i) ? '✓' : ''}</span></span></div>`).join('')}
+      ${cite(c.cite)}<button class="btn danger" id="reset">Reset checklist</button>`;
+    view.querySelectorAll('.check').forEach((el) => { const tog = () => { const i = +el.dataset.i; const d = store.get('check:' + id, []); store.set('check:' + id, d.includes(i) ? d.filter((x) => x !== i) : d.concat(i)); checklist(id); }; el.onclick = tog; el.onkeydown = (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } }; });
+    $('#reset').onclick = () => { if (confirm('Reset all check-offs for this checklist?')) { store.set('check:' + id, []); checklist(id); } };
+    const curEl = view.querySelector('.current'); if (curEl && done.length) curEl.scrollIntoView({ block: 'center' });
+  }
+  function flow(id, path) {
+    const f = C.flows[id]; if (!f) return notFound();
+    setTop(f.title, true);
+    const steps = path ? path.split('.') : [];
+    const node = steps.length ? steps[steps.length - 1] : f.start;
+    const trail = [f.start].concat(steps.filter((s) => !s.startsWith('out:')).slice(0, -0 || undefined));
+    const crumbs = [f.title].concat(steps.map((s) => s.startsWith('out:') ? 'Result' : (f.nodes[s] ? f.nodes[s].q.split(' ').slice(0, 3).join(' ') + '…' : s)));
+    const base = '#/flow/' + id + '/';
+    let html = `<p class="crumbs">${crumbs.map(esc).join(' › ')}</p>`;
+    if (node.startsWith('out:')) {
+      const o = f.outcomes[node.slice(4)];
+      html += `<div class="card outcome"><h3>Do this</h3><p>${esc(o.text)}</p>${cite(o.cite)}</div>`;
+      if (o.to) html += `<a class="btn primary" href="${href(o.to)}">Open: ${esc(titleOf(o.to))}</a>`;
+      if (o.call) html += `<a class="btn secondary" href="tel:${esc(CFG.phone)}">Call ${esc(CFG.phoneDisplay)}</a>`;
+    } else {
+      const n = f.nodes[node];
+      html += `<div class="card"><h3>${esc(n.q)}</h3>${n.help ? `<p>${esc(n.help)}</p>` : ''}${cite(n.cite)}</div>
+        <div class="qa">${n.a.map(([label, to]) => `<a class="btn secondary" href="${base}${steps.concat(to).join('.')}">${esc(label)}</a>`).join('')}</div>`;
+    }
+    html += `<a class="btn text" href="#/flow/${id}">Start over</a>`;
+    view.innerHTML = html; void trail;
+  }
+  function textOf(obj) { return JSON.stringify(obj).replace(/"[a-z]+":/g, ' ').toLowerCase(); }
+  function search() {
+    setTop('Search', true);
+    view.innerHTML = `<h2>Search</h2><input class="search" id="q" type="search" placeholder="e.g. provisional, seal, ID" aria-label="Search"><div id="res"></div>`;
+    const items = Object.keys(C.screens).map((k) => [k, C.screens[k]]).concat(Object.keys(C.checklists).map((k) => ['check:' + k, C.checklists[k]])).concat(Object.keys(C.flows).map((k) => ['flow:' + k, C.flows[k]]));
+    const q = $('#q'); q.oninput = () => { const v = q.value.trim().toLowerCase(); $('#res').innerHTML = v.length < 2 ? '' : items.filter(([, o]) => textOf(o).includes(v)).map(([k]) => linkCard(k)).join('') || '<p>No matches.</p>'; };
+    q.focus();
+  }
+  function aboutHtml() {
+    const j = C.jurisdiction;
+    return `<div class="alert warning"><b>⚠ Unofficial guide</b>${esc(C.notice)}</div>
+      <p><b>Source:</b> ${esc(j.manual)}. Every screen cites the printed manual page.</p>
+      <p><b>Election type:</b> ${esc(j.electionType)} — no party selection (primary-only steps are hidden).</p>
+      <p><b>Privacy:</b> works fully offline; no accounts, analytics, location or network calls. Checklist check-offs are saved only on this device and can be reset. The app never holds codes, seal numbers, key locations, or voter/judge names.</p>
+      <h3>Not covered</h3><ul>${C.flags.excluded.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+      <h3>Refresh each election</h3><ul>${C.flags.timeSensitive.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+      <h3>Varies by precinct</h3><ul>${C.flags.precinctLocal.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+      <p>Draft for review by the ${esc(j.division)} before public release. Template: jurisdiction content lives in content.json and county-config.json.</p>
+      <button class="btn secondary" id="resetAll">Reset all checklists</button>`;
+  }
+  function notFound() { setTop('Not found', true); view.innerHTML = '<p>Page not found.</p><a class="btn primary" href="#/">Home</a>'; }
+
+  function route() {
+    const h = location.hash.replace(/^#\/?/, '').split('/');
+    if (!h[0]) home(); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
+    else if (h[0] === 'flow') flow(h[1], h[2]); else if (h[0] === 'search') search(); else if (h[0] === 'about') screen('about'); else notFound();
+    const ra = $('#resetAll'); if (ra) ra.onclick = () => { if (confirm('Reset all checklists?')) Object.keys(C.checklists).forEach((k) => store.set('check:' + k, [])); };
+    window.scrollTo(0, 0); view.focus({ preventScroll: true });
+  }
+
+  async function boot() {
+    initTheme();
+    [C, CFG] = await Promise.all([fetch('data/content.json').then((r) => r.json()), fetch('data/county-config.json').then((r) => r.json())]);
+    $('#callbar').href = 'tel:' + CFG.phone; $('#cbnum').textContent = CFG.phoneDisplay;
+    applyTheme();
+    $('#backBtn').onclick = () => history.length > 1 ? history.back() : (location.hash = '#/');
+    addEventListener('hashchange', route); route();
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+  boot().catch((e) => { view.innerHTML = '<p>Could not load content. ' + esc(e.message) + '</p>'; });
+})();

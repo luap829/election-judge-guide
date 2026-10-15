@@ -1,0 +1,1255 @@
+{
+ "jurisdiction": {
+  "name": "DuPage County",
+  "state": "Illinois",
+  "division": "DuPage County Clerk Election Division",
+  "phone": "+16304075577",
+  "phoneDisplay": "(630) 407-5577",
+  "phoneCite": "Manual 8, 10",
+  "address": [
+   "DuPage County Administration Building",
+   "421 County Farm Road",
+   "Wheaton, IL 60187"
+  ],
+  "addressCite": "Manual 232 (supply return)",
+  "manual": "Election Judge Manual — Policies and Procedures, updated for the November 2026 General Election",
+  "electionType": "general",
+  "pollHours": "6:00 AM – 7:00 PM"
+ },
+ "notice": "Not produced or endorsed by DuPage County. Based on the Nov 2026 Election Judge Manual; paper materials govern.",
+ "tabs": [
+  {
+   "id": "before",
+   "label": "Before (Mon night)",
+   "items": [
+    "check:monday",
+    "seal-card",
+    "phone-use"
+   ]
+  },
+  {
+   "id": "opening",
+   "label": "Opening (Tue AM)",
+   "items": [
+    "check:tuesday",
+    "open-polls",
+    "equipment"
+   ]
+  },
+  {
+   "id": "during",
+   "label": "During voting",
+   "items": [
+    "checkin",
+    "issue-ballot",
+    "vote-anywhere",
+    "who-allowed",
+    "emergency"
+   ]
+  },
+  {
+   "id": "special",
+   "label": "Special situations",
+   "items": [
+    "flow:sig",
+    "registration",
+    "update",
+    "inactive",
+    "provisional",
+    "mail-ballots",
+    "dropoff",
+    "spoil",
+    "assistance",
+    "equipment"
+   ]
+  },
+  {
+   "id": "closing",
+   "label": "Closing",
+   "items": [
+    "closing",
+    "check:closing",
+    "supply-return"
+   ]
+  }
+ ],
+ "quickTools": [
+  {
+   "to": "emergency",
+   "label": "Call / emergency",
+   "cite": "10"
+  },
+  {
+   "to": "check:monday",
+   "label": "Monday night checklist",
+   "cite": "31"
+  },
+  {
+   "to": "check:tuesday",
+   "label": "Tuesday morning checklist",
+   "cite": "56"
+  },
+  {
+   "to": "flow:checkin",
+   "label": "Check-in triage",
+   "cite": "117–179"
+  },
+  {
+   "to": "flow:sig",
+   "label": "Challenged signature",
+   "cite": "124–132"
+  },
+  {
+   "to": "flow:register",
+   "label": "Register / update",
+   "cite": "133–148"
+  },
+  {
+   "to": "provisional",
+   "label": "Provisional ballot",
+   "cite": "151–164"
+  },
+  {
+   "to": "spoil",
+   "label": "Spoil a ballot",
+   "cite": "180–186"
+  },
+  {
+   "to": "flow:who",
+   "label": "Who may be here?",
+   "cite": "11–16"
+  },
+  {
+   "to": "check:closing",
+   "label": "After polls close",
+   "cite": "189–232"
+  }
+ ],
+ "screens": {
+  "emergency": {
+   "title": "Emergency, weather, injury",
+   "cite": "Manual 10",
+   "tab": "during",
+   "blocks": [
+    {
+     "t": "alert",
+     "kind": "critical",
+     "title": "Safety first",
+     "text": "In the event of an emergency, safety is the priority."
+    },
+    {
+     "t": "h",
+     "text": "Severe weather"
+    },
+    {
+     "t": "p",
+     "text": "The Election Division monitors weather. If severe, judges are notified via Poll Pad messaging or by phone. The polling place may need to be temporarily or permanently closed. If, and only if, it is safe, take these items (in order of importance):"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Voted ballots from the Ballot Box",
+      "Verity Scan",
+      "Vote-By-Mail Dropbox",
+      "Poll Pads",
+      "Used forms such as the Provisional Carrier Pouch and Voter Authorization Receipt Envelope"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Secure supplies left behind as well as possible. Once in a safe place, call the Election Division for instructions."
+    },
+    {
+     "t": "h",
+     "text": "Accident or injury"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Call 911, if needed.",
+      "Reassure the injured person that help is on the way.",
+      "One judge keeps the area clear, guiding voters safely through the polling place.",
+      "Once handled, call the Election Division to report the incident and get further instructions."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Public disturbance"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Observe and note what is happening, who is involved, and the nature of the disturbance. Alert other judges if possible.",
+      "Call 911 if it cannot be resolved internally or threatens safety.",
+      "Notify the Election Division once addressed: what happened and what steps were taken."
+     ]
+    }
+   ]
+  },
+  "vote-anywhere": {
+   "title": "Vote Anywhere",
+   "cite": "Manual 8",
+   "tab": "during",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "'Vote Anywhere' allows voters and election judges to cast a ballot at any polling place in DuPage County."
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "A voter from another precinct is not a mistake",
+     "text": "Do not send them elsewhere. Check them in on the Poll Pad as usual."
+    },
+    {
+     "t": "p",
+     "text": "When the ballot is printed on the Verity Print, verify that the ballot style matches the Voter Authorization Receipt. If they do not match, contact the Election Division. (Manual 80)"
+    },
+    {
+     "t": "p",
+     "text": "On the Verity Touch Writer, ensure the ballot style on screen matches the Voter Authorization Receipt; if the precinct is incorrect, select NO, cancel and return to the main menu. (Manual 96)"
+    },
+    {
+     "t": "p",
+     "text": "Judges are encouraged to vote by mail or during early voting, since Election Day polling places may be busy."
+    }
+   ]
+  },
+  "phone-use": {
+   "title": "Phones and this app",
+   "cite": "Manual 8, 28",
+   "tab": "before",
+   "blocks": [
+    {
+     "t": "alert",
+     "kind": "warning",
+     "title": "No personal phones at workstations",
+     "text": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks. (Manual 8)"
+    },
+    {
+     "t": "p",
+     "text": "Use this guide to study before Election Day and for quick reference on breaks. The paper manual, quick guides and Pickup Judge materials stay primary at the table."
+    },
+    {
+     "t": "p",
+     "text": "The Election Division cell phone in the Pickup Judge packet is for contacting the Division (Monday setup, Election Day, supply return). It must be charged, turned on and answered. Any judge may use it. (Manual 8, 28)"
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Confirm with county",
+     "text": "Whether reference use of this app at the table is allowed has not been confirmed."
+    }
+   ]
+  },
+  "seal-card": {
+   "title": "Seal-number cross-check",
+   "cite": "Manual 23–24, 55–56",
+   "tab": "before",
+   "blocks": [
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Labels only",
+     "text": "This app never stores seal numbers. Write them only on Election Results Envelope 1."
+    },
+    {
+     "t": "table",
+     "rows": [
+      [
+       "When",
+       "What to do",
+       "Where to record"
+      ],
+      [
+       "Monday arrival",
+       "ESC seal must match the number in the Pickup Judge Envelope. If not, call.",
+       "DELIVERY ESC SECURITY SEAL NUMBER (Env. 1)"
+      ],
+      [
+       "Monday after setup",
+       "New seal from the Keys and Seals Carrier Pouch; put Envelope 1 in ESC; seal ESC.",
+       "NIGHT BEFORE ESC SECURITY SEAL NUMBER (Env. 1)"
+      ],
+      [
+       "Tuesday morning",
+       "ESC seal must match the Night Before number. Put broken seal in Env. 1. If not, call.",
+       "—"
+      ],
+      [
+       "Tuesday setup",
+       "Verity Scan, Verity Print, Touch Writer seals; VBM drop box seal.",
+       "Envelope 1"
+      ]
+     ]
+    }
+   ]
+  },
+  "open-polls": {
+   "title": "Arrival and opening",
+   "cite": "Manual 55, 116",
+   "tab": "opening",
+   "blocks": [
+    {
+     "t": "list",
+     "items": [
+      "All judges arrive by 5:00 AM.",
+      "ALL judges take the Oath of Office and sign in on a Poll Pad. Failure to sign in delays payment.",
+      "At least one complete set (Poll Pad, Verity Print and Ballot Printer) MUST be set up by 6:00 AM. (Manual 56)",
+      "Poll Pads may NOT be set up until Election morning. (Manual 57)",
+      "General election: the judge prints the Zero Report when opening the polls; all judges sign it; it goes in Election Results Envelope 1. (Manual 24)"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "At 6:00 AM a judge stands at the entrance and declares \"THE POLLS ARE OPEN!\" Direct voters to a check-in station. Each station is staffed by a bipartisan team, one from each party."
+    },
+    {
+     "t": "alert",
+     "kind": "critical",
+     "title": "Polls can't open at 6:00 AM?",
+     "text": "Immediately call the Election Division."
+    }
+   ]
+  },
+  "checkin": {
+   "title": "Check-in (Poll Pad)",
+   "cite": "Manual 117–123",
+   "tab": "during",
+   "blocks": [
+    {
+     "t": "alert",
+     "kind": "warning",
+     "title": "Never ask for ID to check in",
+     "text": "Illinois law does not require voters to present ID. If a voter offers one, tell them Illinois does not require ID. If ID is required, the Poll Pad will prompt you. (Manual 117)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Search by the first three letters of the voter's first and last name; tap search. (118)",
+      "Select the voter. Watch for status flags: inactive, mail ballot issued, mail ballot returned, voted early. (118)",
+      "Verify name, date of birth and address; press REGULAR BALLOT. (119) General election: no party selection.",
+      "Rotate the Poll Pad to the voter. Voter confirms name and address and signs with the stylus (signature on file). Rotate back; DONE SIGNING. (121)",
+      "Bipartisan team verifies the information and that the signatures match; both judges initial; press SUBMIT. (122)",
+      "Voter Authorization Receipt prints; use it to print the ballot on the Verity Print or Touch Writer. Afterward place receipts in the Voter Authorization Receipt Box. (123)"
+     ]
+    },
+    {
+     "t": "link",
+     "to": "flow:checkin",
+     "label": "Check-in triage flow"
+    },
+    {
+     "t": "link",
+     "to": "vote-anywhere",
+     "label": "Voter from another precinct"
+    }
+   ]
+  },
+  "issue-ballot": {
+   "title": "Issuing the ballot",
+   "cite": "Manual 80, 103",
+   "tab": "during",
+   "blocks": [
+    {
+     "t": "steps",
+     "items": [
+      "Scan the Voter Authorization Receipt with the Verity Print hand scanner.",
+      "Verify the correct precinct and language are displayed. Select Yes, Print the ballot.",
+      "Verify the ballot style matches the Voter Authorization Receipt. If not, contact the Election Division.",
+      "Using a blue pen, ONE judge initials the Judge's Initials space at the top of the ballot.",
+      "Offer a Ballot Privacy Cover (English front, Spanish back). (103)",
+      "At the Verity Scan, the voter pulls back the cover to show the judge's initials; once verified, the voter inserts the ballot. Take the cover and hand them an I VOTED sticker. (103)"
+     ]
+    }
+   ]
+  },
+  "registration": {
+   "title": "Election Day registration",
+   "cite": "Manual 133–142",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "First check the person is not already registered in DuPage County. On NO RECORDS FOUND, select REGISTER. (133)"
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Two physical IDs — no photo ID required",
+     "text": "1) One with current name AND current address. 2) One with current name OR current address. Info on a phone or tablet cannot be accepted. (133, 139)"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Eligibility: ask the on-screen age and citizenship questions. All YES → NEXT. Any NO → call the Election Division. (134)",
+      "Enter name and date of birth carefully; NEXT. (135)",
+      "Address: house number + first letters of street; pick the match. No match → check entry, then call. If a ballot-style selection screen appears, go back and re-enter the address (it has not precincted). (136)",
+      "Confirm populated info with the voter; NEXT. (137)",
+      "Voter provides (not shows) an Illinois driver's license number, Illinois state ID number, or last 4 of SSN; type it in. (138)",
+      "Select the two presented ID types; NEXT. (139)",
+      "Voter reviews and signs with legal signature; NEXT. (140)",
+      "Judge initials, SUBMIT, ACCEPT. (141)",
+      "IDs provided → proceed to check-in. IDs NOT provided → you must select MARK PROVISIONAL. (142)"
+     ]
+    },
+    {
+     "t": "link",
+     "to": "flow:register",
+     "label": "Registration decision flow"
+    }
+   ]
+  },
+  "update": {
+   "title": "Updating a registration",
+   "cite": "Manual 143–148",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "steps",
+     "items": [
+      "Locate the voter. If moved or name changed, select RE-REGISTER. (143)",
+      "Select UPDATE REGISTRATION. (144)",
+      "Update name and/or address; NEXT. (145)",
+      "Two physical IDs (one current name AND address; one current name OR address). No photo ID required. Select ID types. (146)",
+      "Review, judge initials, SUBMIT, ACCEPT. (147)",
+      "IDs provided → check-in. Not provided → you must MARK PROVISIONAL. (148)"
+     ]
+    }
+   ]
+  },
+  "inactive": {
+   "title": "Inactive voter",
+   "cite": "Manual 149–150",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Inactive voters must present identification to proceed."
+    },
+    {
+     "t": "table",
+     "rows": [
+      [
+       "Scenario",
+       "Voter",
+       "Select"
+      ],
+      [
+       "ID name/address matches registration",
+       "Shows one physical ID with current name and address; checks in",
+       "IDS PRESENTED"
+      ],
+      [
+       "Moved or changed name",
+       "Updates registration (two physical IDs)",
+       "RE-REGISTER VOTER"
+      ],
+      [
+       "No ID",
+       "Votes provisionally",
+       "NO IDS PRESENTED"
+      ]
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Acceptable physical ID (Manual 150)"
+    },
+    {
+     "t": "list",
+     "items": [
+      "State ID / Driver's License / Passport",
+      "Government / Military Employee / School / Public Aid ID",
+      "Utility bill, checkbook, bank statement, pay stub",
+      "Lease / contract for residence",
+      "Postmarked first-class mail",
+      "Social Security card, credit card, insurance card",
+      "FOID card",
+      "Civic union / professional association membership card"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Info on a phone or tablet cannot be accepted."
+    }
+   ]
+  },
+  "provisional": {
+   "title": "Provisional ballot",
+   "cite": "Manual 151–164",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "h",
+     "text": "Reasons (check all that apply on Envelope 1)"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Name not on Poll Pad and refused Same Day Registration",
+      "Voter's status challenged and sustained by a majority of judges",
+      "Court order extended voting hours",
+      "Unable to provide required ID",
+      "Poll Pad shows voted early or returned VBM ballot",
+      "Attempted to register but lacked documentation"
+     ]
+    },
+    {
+     "t": "h",
+     "text": "At a glance"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Judge processes voter in Poll Pad (PROCESS PROVISIONALLY → verify → OK; voter signs; two judges, one per party, verify, initial, SUBMIT). Provisional Receipt prints. (152–156)",
+      "Supplies: Provisional Voting Supplies Envelope in the Supply Box in the ESC. (157)",
+      "Voter completes and signs the green sections of PROVISIONAL AFFIDAVIT ENVELOPE 1; judge completes and signs the blue sections (Poll ID, township, precinct from the receipt; reasons). General election: leave the party line blank. (158–162)",
+      "Scan the Provisional Receipt to print the provisional ballot. Give the voter the ballot and SECRECY PROVISIONAL ENVELOPE 2. (163)",
+      "Voter votes, folds, seals the ballot in Envelope 2, returns it. Do NOT feed into Verity Scan or ballot box. (163)",
+      "Judge completes Envelope 2 (Poll ID, township, precinct, 4-digit provisional ballot style). (163)",
+      "Give the voter the Provisional Affidavit copy from inside Envelope 1. (164)",
+      "Put sealed Envelope 2 and the Provisional Receipt into Envelope 1; seal it; place in the PROVISIONAL BALLOT CARRIER POUCH. (164)"
+     ]
+    },
+    {
+     "t": "alert",
+     "kind": "warning",
+     "title": "Envelopes 1 and 2 must be complete",
+     "text": "Or the ballot may not be counted. Voters processed provisionally for missing/invalid ID have 7 days to bring ID to the Election Division. (151, 156)"
+    }
+   ]
+  },
+  "mail-ballots": {
+   "title": "Mail and early ballots",
+   "cite": "Manual 165–179",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "A red MAIL BALLOT ISSUED flag means a VBM ballot was issued but not returned. (165)"
+    },
+    {
+     "t": "table",
+     "rows": [
+      [
+       "Situation",
+       "Do this"
+      ],
+      [
+       "Wants to drop off voted VBM ballot",
+       "Direct them to the VBM Dropbox (sealed, signed in red box). Select CLOSE. (166)"
+      ],
+      [
+       "Has VBM ballot, wants to vote in person",
+       "Take ballot+envelope, green VOID—SURRENDERED label over flap, into SPOILED BALLOT CARRIER POUCH; select VBM BALLOT SURRENDERED; voter signs Surrendered Ballot Affidavit; ISSUE NEW BALLOT. (167–169)"
+      ],
+      [
+       "Doesn't have it with them",
+       "NO VBM BALLOT TO SURRENDER; voter signs affidavit; REGULAR BALLOT. (170–172)"
+      ],
+      [
+       "Says never received it",
+       "NO VBM BALLOT RECEIVED; voter signs affidavit; REGULAR BALLOT. (173–175)"
+      ],
+      [
+       "Red MAIL BALLOT RETURNED, voter disagrees",
+       "Election Day: may vote provisionally (PROCESS PROVISIONALLY). (176–177)"
+      ],
+      [
+       "Green VOTED EARLY, voter disagrees",
+       "Election Day: may vote provisionally. (178–179)"
+      ]
+     ]
+    },
+    {
+     "t": "alert",
+     "kind": "warning",
+     "title": "Surrender / no-ballot affidavits are NOT provisional",
+     "text": "Do not issue a provisional ballot or use provisional envelopes. (169, 171, 174)"
+    },
+    {
+     "t": "link",
+     "to": "flow:mail",
+     "label": "Mail-ballot decision flow"
+    },
+    {
+     "t": "link",
+     "to": "dropoff",
+     "label": "Mail-ballot drop-off"
+    }
+   ]
+  },
+  "dropoff": {
+   "title": "Mail-ballot drop-off",
+   "cite": "Manual 99, 166, 198, 229",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "On Election Day a Vote-By-Mail Drop Box is inside each polling place for completed, sealed and signed VBM ballot envelopes dropped off by the voter or a designee. (99)"
+    },
+    {
+     "t": "h",
+     "text": "Voter returning a mail ballot here"
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Direct them to place it in the VBM Dropbox.",
+      "The ballot must be sealed in its VBM ballot envelope.",
+      "The voter must sign the envelope in the red signature-required box.",
+      "On the Poll Pad (if checked in), select CLOSE. (166)"
+     ]
+    },
+    {
+     "t": "alert",
+     "kind": "warning",
+     "title": "Do not",
+     "text": "Open VBM envelopes or scan VBM ballots. They are verified, processed and counted at the Election Division. (166)"
+    },
+    {
+     "t": "h",
+     "text": "After polls close (Manual 198, 229)"
+    },
+    {
+     "t": "p",
+     "text": "A bipartisan team empties the drop box, puts a Polling Place Label on each envelope, places them in the yellow VOTE BY MAIL CARRIER POUCH, completes, seals and signs it, and puts it in the Blue Rolling Case. Surrendered VBM ballots go in the Spoiled Ballot Carrier Pouch instead."
+    },
+    {
+     "t": "h",
+     "text": "County building drive-up drop box"
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Confirm with county",
+     "text": "The manual does not describe a drive-up drop box. A drive-up drop box is reported at the county building, DuPage County Administration Building, 421 County Farm Road, Wheaton. Hours, dates and availability: confirm with the county before telling voters."
+    }
+   ]
+  },
+  "spoil": {
+   "title": "Spoil a ballot",
+   "cite": "Manual 104–105, 180–186",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Reasons: SOILED BALLOT (beverage spill); BALLOT DESTROYED (damaged/torn); OTHER (mismarked ballot, missing judge initials). WRONG PARTY SELECTED is for primaries only — not used in the general election."
+    },
+    {
+     "t": "steps",
+     "items": [
+      "Look up the voter's check-in record (first 3 letters of last and first name). Status shows Voted in green. Tap the gear icon. (180)",
+      "Select SPOIL BALLOT. (181)",
+      "Choose the ballot to spoil (below the voter's name), choose the reason, select SPOIL BALLOT. (182, 184)",
+      "A new Voter Authorization Receipt prints. Scan its barcode with the Verity Print hand scanner, initial the ballot, give it to the voter; receipt goes in the receipt box. (185)",
+      "Write SPOILED across the top of the old ballot. Voter places it in the VOTER'S SPOILED BALLOT SECURITY ENVELOPE. (186)",
+      "Write the ballot style in the red box; place the envelope in the SPOILED BALLOT CARRIER POUCH. (186)"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "After polls close: record totals, seal, sign and date the Spoiled Ballot Carrier Pouch; place it in the Blue Rolling Case. (105)"
+    }
+   ]
+  },
+  "assistance": {
+   "title": "Voter assistance",
+   "cite": "Manual 101, 108, 187–188",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "A voter may receive assistance only if they 1) do not speak or read English, or 2) are not able to mark the ballot."
+    },
+    {
+     "t": "p",
+     "text": "Assistance may be given by a bipartisan team of judges, or by a person of the voter's choosing — but not the voter's employer or union representative."
+    },
+    {
+     "t": "steps",
+     "items": [
+      "At check-in, tick the Assistance Required box. (187)",
+      "Choose the reason, enter the assister's name and address, have the assister (not the voter) sign the oath; CONTINUE. (188)"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "If assistance is requested after check-in, use the Affidavit of Assisted Voter (Purple Form) from the DURING ELECTION envelope; return it in Envelope 2. (108)"
+    },
+    {
+     "t": "p",
+     "text": "ADA parking kits, alternative-entrance and doorbell kits are issued to some polling places only. (101)"
+    }
+   ]
+  },
+  "who-allowed": {
+   "title": "Who may be here?",
+   "cite": "Manual 11–16, 189",
+   "tab": "during",
+   "blocks": [
+    {
+     "t": "list",
+     "items": [
+      "Election judges; field representatives; voters while voting; minor children with their voting parent/guardian",
+      "Representatives of the DuPage County Clerk, Illinois State Board of Elections, State's Attorney and Attorney General",
+      "Law enforcement acting officially",
+      "Pollwatchers with valid credentials; media with valid credentials"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Judges are the sole authority in the polling place and campaign free zone. By majority they decide challenges, may remove unauthorized pollwatchers and may limit their number. Only judges handle election materials."
+    },
+    {
+     "t": "link",
+     "to": "flow:who",
+     "label": "Who-may-be-here flow"
+    },
+    {
+     "t": "h",
+     "text": "Pollwatchers (13–15)"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Must present and surrender a signed credential on entering; it goes in the Pollwatcher Envelope.",
+      "Sign in and out on the Pollwatcher Register each time; one credential per polling place per day.",
+      "May not re-enter once the polls close.",
+      "May challenge a voter's right to vote, stating a reason; judges decide by majority.",
+      "May not electioneer, interfere, or handle materials."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Media (12)"
+    },
+    {
+     "t": "list",
+     "items": [
+      "Ask for ID (badge or business card) and a DuPage County Election Division credential.",
+      "May photograph/film inside; individuals may ask to be excluded.",
+      "May not photograph ballot selections, handle equipment, block access, discuss politics, or interview within 100 feet of the voting room entrance."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Campaign Free Zone (16)"
+    },
+    {
+     "t": "list",
+     "items": [
+      "No electioneering within 100 feet of the polling room — if that ends inside the building, none inside the building.",
+      "Place blue NO ELECTIONEERING cones outside the front door / 100 feet from the room entrance (100).",
+      "Private sites may make their whole property campaign-free (shield sign); don't remove those signs.",
+      "Write-in candidate listing: on the check-in table for voters who ask; do not copy or post it. (26)"
+     ]
+    }
+   ]
+  },
+  "equipment": {
+   "title": "Equipment quick guides",
+   "cite": "Manual 51–54, 111–114",
+   "tab": "special",
+   "blocks": [
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Use the paper guides",
+     "text": "Step-by-step setup guides for Poll Pad, Verity Print, Verity Scan and Verity Touch Writer are in the During Election envelope; closing guides are in the After Polls Close envelope. This draft only summarizes. Per-device steppers are stubbed."
+    },
+    {
+     "t": "list",
+     "items": [
+      "Poll Pads may NOT be set up until Election morning. (57, 111)",
+      "Do not hang Quick Guide setup instructions in the polling place. (51)",
+      "Ballot style doesn't match the Voter Authorization Receipt → call the Election Division. (80)",
+      "Don't remove a Verity tablet until the unit is fully powered down. (202, 208, 216)"
+     ]
+    },
+    {
+     "t": "alert",
+     "kind": "critical",
+     "title": "When to call",
+     "text": "Any seal mismatch, polls can't open at 6:00 AM, ballot style mismatch, or a device problem you can't resolve with the guide."
+    }
+   ]
+  },
+  "closing": {
+   "title": "Closing the polls",
+   "cite": "Manual 189–232",
+   "tab": "closing",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "At 7:00 PM one judge announces loudly, \"THE POLLS ARE NOW CLOSED.\" One judge stands behind the last voter in line. Anyone in line may vote and is processed normally; voters arriving after 7:00 PM may not vote. (189)"
+    },
+    {
+     "t": "p",
+     "text": "After the last vote, only judges, credentialed pollwatchers, law enforcement, and Election Division / State Board / State's Attorney / Attorney General representatives may remain. (189)"
+    },
+    {
+     "t": "alert",
+     "kind": "info",
+     "title": "Codes are not in this app",
+     "text": "The Close Polls Code is in the Judges' Pickup Envelope. Pollwatchers requesting reports must contact the Election Division; reports are not printed for them. (201)"
+    },
+    {
+     "t": "link",
+     "to": "check:closing",
+     "label": "After polls close checklist"
+    },
+    {
+     "t": "link",
+     "to": "supply-return",
+     "label": "Supply return"
+    }
+   ]
+  },
+  "supply-return": {
+   "title": "Supply return",
+   "cite": "Manual 20–21, 231–232",
+   "tab": "closing",
+   "blocks": [
+    {
+     "t": "list",
+     "items": [
+      "Returned by a bipartisan team (1 Democrat, 1 Republican) in the same vehicle. High school student judges may not return supplies.",
+      "Cell phone turned on; the passenger keeps the orange cell phone pouch. (29)",
+      "Hand-return: Verity Scan unit, orange cell phone pouch, Blue Rolling Case (see the Return of Supplies Certification).",
+      "White ballot delivery case(s) with voted ballots go in the locked compartment of the ESC — not the rolling case.",
+      "Both returning judges sign the Election Supply Return Form ($30 each; incomplete forms delay or forfeit payment).",
+      "Judges will be sent back for any items left behind."
+     ]
+    },
+    {
+     "t": "addr"
+    }
+   ]
+  },
+  "about": {
+   "title": "About & sources",
+   "cite": "Manual cover",
+   "tab": "",
+   "blocks": [
+    {
+     "t": "about"
+    }
+   ]
+  }
+ },
+ "checklists": {
+  "monday": {
+   "title": "Monday night checklist",
+   "cite": "Manual 31, 23",
+   "items": [
+    "ESC: verify polling place number and site name; ESC seal # matches the Pickup Judge Envelope (if not, call). Record on Envelope 1; break seal and place it in the envelope.",
+    "Tables and chairs for check-in stations, with space between stations.",
+    "Voting booths out of ESC; spaced apart, voter's back to the wall; 1–2 on a table. (32)",
+    "ADA booth (gray box): follow the ADA Booth Setup Guide.",
+    "Verity Touch Writer booth and printer table: follow its setup guide.",
+    "Ballot box and ballot bag: follow the setup guide.",
+    "Extension cords, USB, power strips: plug in and confirm working outlets (light on). Purple Hart supplies bag into place.",
+    "Hang posters from the For Setup envelope. The During envelope is ONLY for Tuesday. (Remaining items on this step are illegible in the source scan — check the paper checklist.)",
+    "New seal from the Keys and Seals Carrier Pouch; record as NIGHT BEFORE seal on Envelope 1; Envelope 1 into ESC; close, lock, and seal the ESC. (23)"
+   ]
+  },
+  "tuesday": {
+   "title": "Tuesday morning checklist",
+   "cite": "Manual 55–56",
+   "items": [
+    "Turn on the Division cell phone; raise the volume.",
+    "Break ESC seal; verify it matches the Night Before number on Envelope 1 (if not, call). Broken seal into Envelope 1.",
+    "Set up Poll Pads. After the first is up, ALL judges take the Oath and sign in.",
+    "At least one complete set (Poll Pad, Verity Print, ballot printer) up by 6:00 AM.",
+    "Complete the Certificate of Inspection (OPEN FIRST white case); into Envelope 1.",
+    "Set up Verity Print + printer, Verity Scan, Verity Touch Writer + printer (During Envelope guides). Record seal numbers on Envelope 1; signed Zero Report into Envelope 1.",
+    "VBM drop box: blue rolling case empty, near check-in, chained to a heavy object and locked, zipped and sealed (record seal # on Envelope 1), ballot slot open. (99)",
+    "Entrance: American flag, exterior A-frame sign, No Electioneering cone(s).",
+    "6:00 AM: open the doors and announce the polls are open."
+   ]
+  },
+  "closing": {
+   "title": "After polls close checklist",
+   "cite": "Manual 190–232",
+   "items": [
+    "Get the 4 forms from the Pickup Judge Envelope: Closing Procedures Checklist, Return of Supplies Certification, Official Ballot Record, Election Supply Return Form. (190)",
+    "Verity Scan (bipartisan pair): check the ballot box auxiliary compartment, scan any ballots found; close polls; all judges sign the Tally Summary Report → Envelope 1. (200–201)",
+    "Power down Verity Scan fully before removing the tablet; return the Scan unit on election night — not in the ESC. (202–204)",
+    "Ballot box: remove voted ballots, pack in white transfer case(s), seal with filament tape, both judges sign/date; into the locked ESC shelf. (205)",
+    "Verity Print: print Ballot Count Report (total → OBR; report → Envelope 1); power down; pack. (208–212)",
+    "Touch Writer: record ballot total on OBR; close polls; Close Polls Report → Envelope 1; power down; pack. (214–220)",
+    "Poll Pad: print Summary Report → Envelope 1; power off and pack the case. (222–226)",
+    "Voter Authorization Receipts → carrier pouch; one judge per party signs and dates; seal; into Blue Rolling Case. (197)",
+    "Empty VBM drop box (bipartisan); label envelopes; VBM Carrier Pouch; seal, sign; into Blue Rolling Case. (198, 229)",
+    "Spoiled Ballot Carrier Pouch: totals, seal, sign, date; into Blue Rolling Case. (105)",
+    "Complete the Official Ballot Record; all judges sign with time; into Envelope 2. (22)",
+    "Complete forms for Envelope 2 (incl. Pollwatcher Envelope), check boxes; into Blue Rolling Case. (14, 196)",
+    "Disassemble booths; pack signs, cones, flag, kits into the ESC. (227–230)",
+    "Bipartisan return of supplies with the certification and return form. (231–232)"
+   ]
+  }
+ },
+ "flows": {
+  "checkin": {
+   "title": "Check-in triage",
+   "cite": "Manual 117–179",
+   "start": "found",
+   "nodes": {
+    "found": {
+     "q": "Is the voter found on the Poll Pad?",
+     "cite": "Manual 118, 133",
+     "a": [
+      [
+       "Yes",
+       "status"
+      ],
+      [
+       "No",
+       "notfound"
+      ]
+     ]
+    },
+    "notfound": {
+     "q": "Not found. Will they register (Election Day registration)?",
+     "cite": "Manual 133, 151",
+     "help": "First confirm they are not registered elsewhere in DuPage County. Vote Anywhere: other precincts are normal.",
+     "a": [
+      [
+       "Yes, register",
+       "out:register"
+      ],
+      [
+       "Refuses",
+       "out:prov"
+      ]
+     ]
+    },
+    "status": {
+     "q": "Any status flag on the record?",
+     "cite": "Manual 118",
+     "a": [
+      [
+       "None / active",
+       "sig"
+      ],
+      [
+       "Inactive",
+       "out:inactive"
+      ],
+      [
+       "Mail ballot issued",
+       "out:mail"
+      ],
+      [
+       "Mail ballot returned",
+       "out:mail"
+      ],
+      [
+       "Voted early",
+       "out:mail"
+      ]
+     ]
+    },
+    "sig": {
+     "q": "Do the signatures match (bipartisan team)?",
+     "cite": "Manual 122, 124",
+     "a": [
+      [
+       "Yes",
+       "out:ok"
+      ],
+      [
+       "No — majority challenges",
+       "out:sigchal"
+      ]
+     ]
+    }
+   },
+   "outcomes": {
+    "ok": {
+     "text": "Both judges initial and SUBMIT. Print the ballot from the Voter Authorization Receipt; verify ballot style matches.",
+     "to": "issue-ballot",
+     "cite": "Manual 122–123, 80"
+    },
+    "register": {
+     "text": "Follow Election Day registration (two physical IDs, no photo ID required).",
+     "to": "registration",
+     "cite": "Manual 133–142"
+    },
+    "prov": {
+     "text": "Process provisionally.",
+     "to": "provisional",
+     "cite": "Manual 151"
+    },
+    "inactive": {
+     "text": "Inactive voters must present ID. Follow the inactive-voter scenarios.",
+     "to": "inactive",
+     "cite": "Manual 149–150"
+    },
+    "mail": {
+     "text": "Follow the mail / early ballot scenarios.",
+     "to": "flow:mail",
+     "cite": "Manual 165–179"
+    },
+    "sigchal": {
+     "text": "Offer: provide one ID with name and address, or vote provisionally.",
+     "to": "flow:sig",
+     "cite": "Manual 124"
+    }
+   }
+  },
+  "sig": {
+   "title": "Challenged signature",
+   "cite": "Manual 124–132",
+   "start": "id",
+   "nodes": {
+    "id": {
+     "q": "Does the voter have one form of ID with their name and address?",
+     "cite": "Manual 124, 129",
+     "a": [
+      [
+       "Yes",
+       "out:id"
+      ],
+      [
+       "No / prefers provisional",
+       "out:prov"
+      ]
+     ]
+    }
+   },
+   "outcomes": {
+    "id": {
+     "text": "Tap SIGNATURE CAPTURE. Voter shows the ID and signs; CONTINUE; judge initials; SUBMIT. Voter Authorization Receipt prints.",
+     "cite": "Manual 129–132"
+    },
+    "prov": {
+     "text": "Select MARK PROVISIONAL → reason CHALLENGE VOTER → SUBMIT. Then complete Provisional Envelopes 1 and 2.",
+     "to": "provisional",
+     "cite": "Manual 125–128"
+    }
+   }
+  },
+  "register": {
+   "title": "Register or update",
+   "cite": "Manual 133–148",
+   "start": "elig",
+   "nodes": {
+    "elig": {
+     "q": "All on-screen age and citizenship answers YES?",
+     "cite": "Manual 134",
+     "a": [
+      [
+       "Yes",
+       "addr"
+      ],
+      [
+       "Any NO",
+       "out:call"
+      ]
+     ]
+    },
+    "addr": {
+     "q": "Does the address match in the Poll Pad?",
+     "cite": "Manual 136",
+     "a": [
+      [
+       "Yes",
+       "ids"
+      ],
+      [
+       "No match after re-entry",
+       "out:call"
+      ]
+     ]
+    },
+    "ids": {
+     "q": "Two physical IDs (one: name AND address; other: name OR address)?",
+     "cite": "Manual 139, 146",
+     "a": [
+      [
+       "Yes",
+       "out:ok"
+      ],
+      [
+       "No",
+       "out:prov"
+      ]
+     ]
+    }
+   },
+   "outcomes": {
+    "call": {
+     "text": "Call the Election Division for assistance and instruction.",
+     "cite": "Manual 134, 136",
+     "call": true
+    },
+    "ok": {
+     "text": "Voter signs; judge initials, SUBMIT, ACCEPT; proceed to check-in.",
+     "cite": "Manual 140–142"
+    },
+    "prov": {
+     "text": "You must select MARK PROVISIONAL.",
+     "to": "provisional",
+     "cite": "Manual 142, 148"
+    }
+   }
+  },
+  "mail": {
+   "title": "Mail & early ballots",
+   "cite": "Manual 165–179",
+   "start": "flag",
+   "nodes": {
+    "flag": {
+     "q": "Which flag shows?",
+     "cite": "Manual 118",
+     "a": [
+      [
+       "Mail ballot issued (red)",
+       "issued"
+      ],
+      [
+       "Mail ballot returned (red)",
+       "out:disagree"
+      ],
+      [
+       "Voted early (green)",
+       "out:disagree"
+      ]
+     ]
+    },
+    "issued": {
+     "q": "What does the voter want?",
+     "cite": "Manual 166–173",
+     "a": [
+      [
+       "Drop off voted VBM ballot",
+       "out:drop"
+      ],
+      [
+       "Vote in person, has VBM ballot",
+       "out:surr"
+      ],
+      [
+       "Vote in person, doesn't have it",
+       "out:nosurr"
+      ],
+      [
+       "Says never received one",
+       "out:norec"
+      ]
+     ]
+    }
+   },
+   "outcomes": {
+    "drop": {
+     "text": "Direct them to the VBM Dropbox (sealed, signed in the red box). Select CLOSE.",
+     "to": "dropoff",
+     "cite": "Manual 166"
+    },
+    "surr": {
+     "text": "Green VOID—SURRENDERED label over flap; into Spoiled Ballot Carrier Pouch; VBM BALLOT SURRENDERED; voter signs affidavit; ISSUE NEW BALLOT. Not provisional.",
+     "cite": "Manual 167–169"
+    },
+    "nosurr": {
+     "text": "NO VBM BALLOT TO SURRENDER; voter signs affidavit; REGULAR BALLOT. Not provisional.",
+     "cite": "Manual 170–172"
+    },
+    "norec": {
+     "text": "NO VBM BALLOT RECEIVED; voter signs affidavit; REGULAR BALLOT. Not provisional.",
+     "cite": "Manual 173–175"
+    },
+    "disagree": {
+     "text": "If the voter disagrees: on Election Day they may vote provisionally (PROCESS PROVISIONALLY). The ballot is reviewed for legitimacy.",
+     "to": "provisional",
+     "cite": "Manual 176–179"
+    }
+   }
+  },
+  "who": {
+   "title": "Who may be here?",
+   "cite": "Manual 11–16",
+   "start": "who",
+   "nodes": {
+    "who": {
+     "q": "Who is it?",
+     "cite": "Manual 11",
+     "a": [
+      [
+       "Pollwatcher",
+       "pw"
+      ],
+      [
+       "Media",
+       "out:media"
+      ],
+      [
+       "Official / law enforcement",
+       "out:official"
+      ],
+      [
+       "Someone electioneering",
+       "out:elect"
+      ]
+     ]
+    },
+    "pw": {
+     "q": "Do they have a signed credential from the County Clerk or State Board of Elections?",
+     "cite": "Manual 13–14",
+     "a": [
+      [
+       "Yes",
+       "out:pwok"
+      ],
+      [
+       "No",
+       "out:pwno"
+      ]
+     ]
+    }
+   },
+   "outcomes": {
+    "pwok": {
+     "text": "Take and keep the credential in the Pollwatcher Envelope; have them sign in (and out) on the register. After polls close they may not re-enter.",
+     "cite": "Manual 14"
+    },
+    "pwno": {
+     "text": "Credentials must be presented and surrendered on entering. Judges by majority may remove unauthorized pollwatchers. Questions: call the Division.",
+     "cite": "Manual 11, 13–14",
+     "call": true
+    },
+    "media": {
+     "text": "Ask for ID and a DuPage County Election Division credential. No ballot photos, no handling equipment, interviews 100+ ft from entrance.",
+     "cite": "Manual 12"
+    },
+    "official": {
+     "text": "Ask for credentials or identification. They may observe but must not interfere.",
+     "cite": "Manual 11"
+    },
+    "elect": {
+     "text": "No electioneering within the Campaign Free Zone (100 ft of the polling room). Questions: call the Division.",
+     "cite": "Manual 16",
+     "call": true
+    }
+   }
+  }
+ },
+ "flags": {
+  "timeSensitive": [
+   "Party selection is for primaries only; hidden for the general election (Manual 120, 153, 162, 183).",
+   "Write-in list, ballot styles, extended hours, early voting, device firmware steps, manual version."
+  ],
+  "precinctLocal": [
+   "Layout, labels, pickup-judge assignment, ADA kits, drop box setup."
+  ],
+  "excluded": [
+   "Open/close and poll-worker codes",
+   "Seal numbers",
+   "Key locations",
+   "Voter or judge names",
+   "Curbside voting"
+  ]
+ }
+}
