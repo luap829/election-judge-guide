@@ -51,3 +51,8 @@
   --success: #7FD99F; --focus: #5CC8D0;
 }
 @media (prefers-reduced-motion: reduce) { :root { --motion: 0ms; } }
+
+/* Bottom bar color treatment (Dean, Oct 15) */
+:root, [data-theme="light"] { --nav-bg: var(--surface); --nav-border: var(--divider); --nav-item: var(--text-muted); --nav-active: var(--accent); --call-icon: #B42318; --call-pressed-bg: #FDECEA; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --call-icon: #FF8A80; --call-pressed-bg: #45161A; } }
+[data-theme="dark"] { --call-icon: #FF8A80; --call-pressed-bg: #45161A; }

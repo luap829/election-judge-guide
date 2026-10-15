@@ -16,6 +16,12 @@
   "electionType": "general",
   "pollHours": "6:00 AM – 7:00 PM"
  },
+ "splash": {
+  "heading": "Unofficial study guide",
+  "quote": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks.",
+  "cite": "Manual 8",
+  "button": "I understand, continue"
+ },
  "notice": "Not produced or endorsed by DuPage County. Based on the Nov 2026 Election Judge Manual; paper materials govern.",
  "tabs": [
   {

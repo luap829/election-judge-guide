@@ -66,20 +66,57 @@
   function setTop(title, back) { $('#topTitle').textContent = title; $('#backBtn').hidden = !back; document.title = title + ' · ' + CFG.appName; }
 
   /* ---------- views ---------- */
+  function quoteHtml() { const s = C.splash; return `<blockquote>\u201C${esc(s.quote)}\u201D</blockquote>${cite(s.cite)}`; }
   function home() {
     setTop(CFG.shortName + ' Election Judge Field Guide', false);
-    const tab = store.get('tab', 'during');
-    const t = C.tabs.find((x) => x.id === tab) || C.tabs[0];
     view.innerHTML = `
-      <div class="alert info"><b>ⓘ Study tool</b>Personal phones are not allowed at workstations; use this guide before Election Day and on breaks. Paper materials govern. ${cite('Manual 8')}</div>
+      <div class="tiles">${C.tabs.map((x) => `<a class="tile" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('')}</div>
+      <div class="alert info"><b>ⓘ ${esc(C.splash.heading)}</b>${quoteHtml()}</div>
       ${linkCard('emergency', 'Emergency, weather, injury')}
       ${addrHtml()}
-      <div class="tabs" role="tablist">${C.tabs.map((x) => `<button role="tab" data-tab="${x.id}" aria-selected="${x.id === t.id}">${esc(x.label)}</button>`).join('')}</div>
-      <div>${t.items.map((i) => linkCard(i)).join('')}</div>
       <h3>Quick tools</h3>
       <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}<span class="cite">Manual ${esc(q.cite)}</span></a>`).join('')}</div>
       <div class="footer"><a class="btn secondary" href="#/s/who-allowed">Who's allowed</a><a class="btn secondary" href="#/search">Search</a><a class="btn secondary" href="#/about">About</a></div>`;
-    view.querySelectorAll('[data-tab]').forEach((b) => b.onclick = () => { store.set('tab', b.dataset.tab); home(); });
+  }
+  function phase(id) {
+    const t = C.tabs.find((x) => x.id === id); if (!t) return notFound();
+    store.set('tab', id); setTop(t.label, true);
+    view.innerHTML = `<h2>${esc(t.label)}</h2>${t.items.map((i) => linkCard(i)).join('')}`;
+  }
+  /* ---------- phases sheet ---------- */
+  let sheetOpener = null;
+  function openSheet() {
+    sheetOpener = document.activeElement;
+    $('#sheetBody').innerHTML = C.tabs.map((x) => `<a class="btn secondary" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('') +
+      `<p class="crumbs">Election Division: <a href="tel:${esc(CFG.phone)}">${esc(CFG.phoneDisplay)}</a></p>`;
+    $('#sheet').hidden = false; $('#backdrop').hidden = false; $('#navPhases').setAttribute('aria-expanded', 'true');
+    $('#sheetClose').focus();
+  }
+  function closeSheet() {
+    if ($('#sheet').hidden) return;
+    $('#sheet').hidden = true; $('#backdrop').hidden = true; $('#navPhases').setAttribute('aria-expanded', 'false');
+    if (sheetOpener && sheetOpener.focus) sheetOpener.focus();
+  }
+  function initNav() {
+    $('#navPhases').onclick = openSheet; $('#sheetClose').onclick = closeSheet; $('#backdrop').onclick = closeSheet;
+    $('#sheetBody').addEventListener('click', (e) => { if (e.target.closest('a[href^="#"]')) closeSheet(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
+    $('#navCall').href = 'tel:' + CFG.phone; $('#navCall').setAttribute('aria-label', 'Call Election Division, ' + CFG.phoneDisplay);
+  }
+  function setActive() {
+    const h = location.hash.replace(/^#\/?/, '');
+    const home = !h; const ph = h.startsWith('phase/');
+    $('#navHome').toggleAttribute('aria-current', false); $('#navPhases').toggleAttribute('aria-current', false);
+    if (home) $('#navHome').setAttribute('aria-current', 'page'); else if (ph) $('#navPhases').setAttribute('aria-current', 'page');
+  }
+  /* ---------- splash: every cold launch, never auto-advances ---------- */
+  function showSplash() {
+    const s = C.splash;
+    $('#splashTitle').textContent = s.heading;
+    $('#splashQuote').innerHTML = `\u201C${esc(s.quote)}\u201D<span class="cite">${esc(s.cite)}</span>`;
+    $('#splashGo').textContent = s.button;
+    $('#splash').hidden = false; $('#splashGo').focus();
+    $('#splashGo').onclick = () => { $('#splash').hidden = true; if (location.hash && location.hash !== '#/') location.hash = '#/'; else route(); view.focus({ preventScroll: true }); };
   }
   function screen(id) {
     const s = C.screens[id]; if (!s) return notFound();
@@ -144,19 +181,20 @@
 
   function route() {
     const h = location.hash.replace(/^#\/?/, '').split('/');
-    if (!h[0]) home(); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
+    closeSheet();
+    if (!h[0]) home(); else if (h[0] === 'phase') phase(h[1]); else if (h[0] === 's') screen(h[1]); else if (h[0] === 'check') checklist(h[1]);
     else if (h[0] === 'flow') flow(h[1], h[2]); else if (h[0] === 'search') search(); else if (h[0] === 'about') screen('about'); else notFound();
     const ra = $('#resetAll'); if (ra) ra.onclick = () => { if (confirm('Reset all checklists?')) Object.keys(C.checklists).forEach((k) => store.set('check:' + k, [])); };
-    window.scrollTo(0, 0); view.focus({ preventScroll: true });
+    setActive(); window.scrollTo(0, 0); if ($('#splash').hidden) view.focus({ preventScroll: true });
   }
 
   async function boot() {
     initTheme();
     [C, CFG] = await Promise.all([fetch('data/content.json').then((r) => r.json()), fetch('data/county-config.json').then((r) => r.json())]);
-    $('#callbar').href = 'tel:' + CFG.phone; $('#cbnum').textContent = CFG.phoneDisplay;
+    initNav();
     applyTheme();
     $('#backBtn').onclick = () => history.length > 1 ? history.back() : (location.hash = '#/');
-    addEventListener('hashchange', route); route();
+    addEventListener('hashchange', route); route(); showSplash();
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
   }
   boot().catch((e) => { view.innerHTML = '<p>Could not load content. ' + esc(e.message) + '</p>'; });
