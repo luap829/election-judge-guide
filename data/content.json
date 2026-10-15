@@ -26,7 +26,7 @@
  "tabs": [
   {
    "id": "before",
-   "label": "Before (Mon night)",
+   "label": "Monday PM Setup",
    "items": [
     "check:monday",
     "seal-card",
@@ -35,7 +35,7 @@
   },
   {
    "id": "opening",
-   "label": "Opening (Tue AM)",
+   "label": "Tuesday AM Opening",
    "items": [
     "check:tuesday",
     "open-polls",
@@ -44,7 +44,7 @@
   },
   {
    "id": "during",
-   "label": "During voting",
+   "label": "During Election Hours",
    "items": [
     "checkin",
     "issue-ballot",
@@ -55,7 +55,7 @@
   },
   {
    "id": "special",
-   "label": "Special situations",
+   "label": "Special Situations",
    "items": [
     "flow:sig",
     "registration",
@@ -71,7 +71,7 @@
   },
   {
    "id": "closing",
-   "label": "Closing",
+   "label": "Tuesday PM Closing",
    "items": [
     "closing",
     "check:closing",
