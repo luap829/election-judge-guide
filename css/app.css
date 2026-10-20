@@ -90,3 +90,4 @@ h4{font-size:var(--fs-lg);margin:1em 0 .3em}
 .rolestile:active{filter:brightness(.9)}
 .rolestile:focus-visible{outline:var(--focus-w) solid var(--text);outline-offset:3px}
 .rolestile .chev{font-size:1.6em;line-height:1}
+.cite .nw{white-space:nowrap}

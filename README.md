@@ -2,7 +2,7 @@
 
 An offline field reference for DuPage County, Illinois election judges. It is an installable web app (PWA) for iPhone, iPad, and Android.
 
-**UNOFFICIAL DRAFT. Not endorsed by DuPage County, the DuPage County Clerk, or its Election Division.** It is for testing and study only and has not been reviewed by the county. Where this guide and the official Election Judge Manual or county staff differ, follow the manual and the county. Every screen cites a page in the Fall 2026 General Election judge manual.
+**UNOFFICIAL DRAFT. Not endorsed by DuPage County, the DuPage County Clerk, or its Election Division.** It is for testing and study only and has not been reviewed by the county. Where this guide and the official Election Judge Manual or county staff differ, follow the manual and the county. Every screen cites a printed page in the Election Judge Manual – Policies and Procedures, DuPage County Clerk Election Division, Updated: November 2026.
 
 Live app: https://luap829.github.io/election-judge-guide/
 

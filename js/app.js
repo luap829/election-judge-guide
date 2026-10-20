@@ -35,7 +35,9 @@
   }
 
   /* ---------- helpers ---------- */
-  const cite = (c) => c ? `<span class="cite">${esc(c)}</span>` : '';
+  /* keep "p. 12" and ranges like "151–164" unbroken so source-named citations stay compact on phones */
+  const citeText = (c) => esc(c).replace(/\b(pp?)\. /g, '$1.\u00A0').replace(/(\d+–\d+)/g, '<span class="nw">$1</span>');
+  const cite = (c) => c ? `<span class="cite">${citeText(c)}</span>` : '';
   function href(to) { if (to.startsWith('roles/')) return '#/' + to; return href0(to); }
   function href0(to) { if (to.startsWith('check:')) return '#/check/' + to.slice(6); if (to.startsWith('flow:')) return '#/flow/' + to.slice(5); return '#/s/' + to; }
   function titleOf(to) {
@@ -51,7 +53,7 @@
     return C.screens[to].cite;
   }
   const linkCard = (to, label) => `<a class="card" href="${href(to)}">${esc(label || titleOf(to))}${cite(citeOf(to))}</a>`;
-  function addrHtml() { const j = C.jurisdiction; return `<div class="card"><b>${esc(j.division)}</b><br>${j.address.map(esc).join('<br>')}<br><a href="tel:${esc(j.phone)}">${esc(j.phoneDisplay)}</a>${cite('Phone: ' + j.phoneCite + ' · Address: ' + j.addressCite)}</div>`; }
+  function addrHtml() { const j = C.jurisdiction; return `<div class="card">Official county contact (from the manual):<br>${j.address.map(esc).join('<br>')}<br><a href="tel:${esc(j.phone)}">${esc(j.phoneDisplay)}</a>${cite('Election Judge Manual: phone ' + j.phoneCite.replace(/^Election Judge Manual, /, '') + ' · address ' + j.addressCite.replace(/^Election Judge Manual, /, ''))}</div>`; }
   function listHtml(items) { return `<ul>${items.map((i) => typeof i === 'string' ? `<li>${esc(i)}</li>` : `<li>${esc(i.text)}${listHtml(i.sub)}</li>`).join('')}</ul>`; }
   function block(b) {
     switch (b.t) {
@@ -69,19 +71,19 @@
     }
     return '';
   }
-  function setTop(title, back) { $('#topTitle').textContent = title; $('#backBtn').hidden = !back; document.title = title + ' · ' + CFG.appName; }
+  function setTop(title, back) { $('#topTitle').textContent = title; $('#backBtn').hidden = !back; document.title = title === CFG.appName ? title : title + ' · ' + CFG.appName; }
 
   /* ---------- views ---------- */
   function quoteHtml() { const s = C.splash; return `<blockquote>\u201C${esc(s.quote)}\u201D</blockquote>${cite(s.cite)}`; }
   function home() {
-    setTop(CFG.shortName + ' Election Judge Field Guide', false);
+    setTop(CFG.appName, false);
     view.innerHTML = `
       <a class="rolestile" href="#/roles" aria-label="${esc(C.splash.rolesLabel)}"><span>${esc(C.splash.rolesLabel)}</span><span class="chev" aria-hidden="true">›</span></a>
       <div class="tiles">${C.tabs.map((x) => `<a class="tile" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('')}</div>
       ${linkCard('emergency', 'Emergency, weather, injury')}
       ${addrHtml()}
       <h3>Quick tools</h3>
-      <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}<span class="cite">Manual ${esc(q.cite)}</span></a>`).join('')}</div>
+      <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}${cite(q.cite)}</a>`).join('')}</div>
       <div class="footer"><a class="btn secondary" href="#/s/who-allowed">Who's allowed</a><a class="btn secondary" href="#/search">Search</a><a class="btn secondary" href="#/about">About</a></div>`;
   }
   function phase(id) {
@@ -94,7 +96,7 @@
   function openSheet() {
     sheetOpener = document.activeElement;
     $('#sheetBody').innerHTML = C.tabs.map((x) => `<a class="btn secondary" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('') +
-      `<p class="crumbs">Election Division: <a href="tel:${esc(CFG.phone)}">${esc(CFG.phoneDisplay)}</a></p>`;
+      `<p class="crumbs">Official number, DuPage County Clerk Election Division: <a href="tel:${esc(CFG.phone)}">${esc(CFG.phoneDisplay)}</a></p>`;
     $('#sheet').hidden = false; $('#backdrop').hidden = false; $('#navPhases').setAttribute('aria-expanded', 'true');
     $('#sheetClose').focus();
   }
@@ -107,7 +109,7 @@
     $('#navPhases').onclick = openSheet; $('#sheetClose').onclick = closeSheet; $('#backdrop').onclick = closeSheet;
     $('#sheetBody').addEventListener('click', (e) => { if (e.target.closest('a[href^="#"]')) closeSheet(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
-    $('#navCall').href = 'tel:' + CFG.phone; $('#navCall').setAttribute('aria-label', 'Call Election Division, ' + CFG.phoneDisplay);
+    $('#navCall').href = 'tel:' + CFG.phone; $('#navCall').setAttribute('aria-label', 'Call the official DuPage County Clerk Election Division, ' + CFG.phoneDisplay);
   }
   function setActive() {
     const h = location.hash.replace(/^#\/?/, '');
@@ -181,7 +183,7 @@
       <h3>Not covered</h3><ul>${C.flags.excluded.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       <h3>Refresh each election</h3><ul>${C.flags.timeSensitive.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       <h3>Varies by precinct</h3><ul>${C.flags.precinctLocal.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
-      <p>Draft for review by the ${esc(j.division)} before public release. Template: jurisdiction content lives in content.json and county-config.json.</p>
+      <p>Template: jurisdiction content lives in content.json and county-config.json.</p>
       <button class="btn secondary" id="resetAll">Reset all checklists</button>`;
   }
   function rolesMenu() {

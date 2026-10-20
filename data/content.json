@@ -5,14 +5,14 @@
   "division": "DuPage County Clerk Election Division",
   "phone": "+16304075577",
   "phoneDisplay": "(630) 407-5577",
-  "phoneCite": "Manual 8, 10",
+  "phoneCite": "Election Judge Manual, pp. 8, 10",
   "address": [
    "DuPage County Administration Building",
-   "421 County Farm Road",
+   "421 N. County Farm Road",
    "Wheaton, IL 60187"
   ],
-  "addressCite": "Manual 232 (supply return)",
-  "manual": "Election Judge Manual — Policies and Procedures, updated for the November 2026 General Election",
+  "addressCite": "Election Judge Manual, p. 232 (supply return)",
+  "manual": "Election Judge Manual – Policies and Procedures, DuPage County Clerk Election Division, Updated: November 2026",
   "electionType": "general",
   "pollHours": "6:00 AM – 7:00 PM"
  },
@@ -35,7 +35,7 @@
    }
   ],
   "rolesLabel": "Election Judge Roles and Responsibilities",
-  "cite": "Manual 9",
+  "cite": "Election Judge Manual, p. 9",
   "button": "I understand, continue"
  },
  "notice": "Not produced or endorsed by DuPage County. Based on the Nov 2026 Election Judge Manual; paper materials govern.",
@@ -99,58 +99,58 @@
   {
    "to": "emergency",
    "label": "Call / emergency",
-   "cite": "10"
+   "cite": "Election Judge Manual, p. 10"
   },
   {
    "to": "check:monday",
    "label": "Monday night checklist",
-   "cite": "31"
+   "cite": "Election Judge Manual, p. 31"
   },
   {
    "to": "check:tuesday",
    "label": "Tuesday morning checklist",
-   "cite": "56"
+   "cite": "Election Judge Manual, p. 56"
   },
   {
    "to": "flow:checkin",
    "label": "Check-in triage",
-   "cite": "117–179"
+   "cite": "Election Judge Manual, pp. 117–179"
   },
   {
    "to": "flow:sig",
    "label": "Challenged signature",
-   "cite": "124–132"
+   "cite": "Election Judge Manual, pp. 124–132"
   },
   {
    "to": "flow:register",
    "label": "Register / update",
-   "cite": "133–148"
+   "cite": "Election Judge Manual, pp. 133–148"
   },
   {
    "to": "provisional",
    "label": "Provisional ballot",
-   "cite": "151–164"
+   "cite": "Election Judge Manual, pp. 151–164"
   },
   {
    "to": "spoil",
    "label": "Spoil a ballot",
-   "cite": "180–186"
+   "cite": "Election Judge Manual, pp. 180–186"
   },
   {
    "to": "flow:who",
    "label": "Who may be here?",
-   "cite": "11–16"
+   "cite": "Election Judge Manual, pp. 11–16"
   },
   {
    "to": "check:closing",
    "label": "After polls close",
-   "cite": "189–232"
+   "cite": "Election Judge Manual, pp. 189–232"
   }
  ],
  "screens": {
   "emergency": {
    "title": "Emergency, weather, injury",
-   "cite": "Manual 10",
+   "cite": "Election Judge Manual, p. 10",
    "tab": "during",
    "blocks": [
     {
@@ -210,7 +210,7 @@
   },
   "vote-anywhere": {
    "title": "Vote Anywhere",
-   "cite": "Manual 9",
+   "cite": "Election Judge Manual, p. 9",
    "tab": "during",
    "blocks": [
     {
@@ -239,7 +239,7 @@
   },
   "phone-use": {
    "title": "Phones and this app",
-   "cite": "Manual 8, 9, 28",
+   "cite": "Election Judge Manual, pp. 8, 9, 28",
    "tab": "before",
    "blocks": [
     {
@@ -266,7 +266,7 @@
   },
   "seal-card": {
    "title": "Seal-number cross-check",
-   "cite": "Manual 23–24, 55–56",
+   "cite": "Election Judge Manual, pp. 23–24, 55–56",
    "tab": "before",
    "blocks": [
     {
@@ -309,7 +309,7 @@
   },
   "open-polls": {
    "title": "Arrival and opening",
-   "cite": "Manual 55, 116",
+   "cite": "Election Judge Manual, pp. 55, 116",
    "tab": "opening",
    "blocks": [
     {
@@ -336,7 +336,7 @@
   },
   "checkin": {
    "title": "Check-in (Poll Pad)",
-   "cite": "Manual 117–123",
+   "cite": "Election Judge Manual, pp. 117–123",
    "tab": "during",
    "blocks": [
     {
@@ -370,7 +370,7 @@
   },
   "issue-ballot": {
    "title": "Issuing the ballot",
-   "cite": "Manual 80, 103",
+   "cite": "Election Judge Manual, pp. 80, 103",
    "tab": "during",
    "blocks": [
     {
@@ -388,7 +388,7 @@
   },
   "registration": {
    "title": "Election Day registration",
-   "cite": "Manual 133–142",
+   "cite": "Election Judge Manual, pp. 133–142",
    "tab": "special",
    "blocks": [
     {
@@ -424,7 +424,7 @@
   },
   "update": {
    "title": "Updating a registration",
-   "cite": "Manual 143–148",
+   "cite": "Election Judge Manual, pp. 143–148",
    "tab": "special",
    "blocks": [
     {
@@ -442,7 +442,7 @@
   },
   "inactive": {
    "title": "Inactive voter",
-   "cite": "Manual 149–150",
+   "cite": "Election Judge Manual, pp. 149–150",
    "tab": "special",
    "blocks": [
     {
@@ -499,7 +499,7 @@
   },
   "provisional": {
    "title": "Provisional ballot",
-   "cite": "Manual 151–164",
+   "cite": "Election Judge Manual, pp. 151–164",
    "tab": "special",
    "blocks": [
     {
@@ -544,7 +544,7 @@
   },
   "mail-ballots": {
    "title": "Mail and early ballots",
-   "cite": "Manual 165–179",
+   "cite": "Election Judge Manual, pp. 165–179",
    "tab": "special",
    "blocks": [
     {
@@ -604,7 +604,7 @@
   },
   "dropoff": {
    "title": "Mail-ballot drop-off",
-   "cite": "Manual 99, 166, 198, 229",
+   "cite": "Election Judge Manual, pp. 99, 166, 198, 229",
    "tab": "special",
    "blocks": [
     {
@@ -646,13 +646,13 @@
      "t": "alert",
      "kind": "info",
      "title": "Confirm with county",
-     "text": "The manual does not describe a drive-up drop box. A drive-up drop box is reported at the county building, DuPage County Administration Building, 421 County Farm Road, Wheaton. Hours, dates and availability: confirm with the county before telling voters."
+     "text": "The manual does not describe a drive-up drop box. A drive-up drop box is reported at the county building, DuPage County Administration Building, 421 N. County Farm Road, Wheaton. Hours, dates and availability: confirm with the county before telling voters."
     }
    ]
   },
   "spoil": {
    "title": "Spoil a ballot",
-   "cite": "Manual 104–105, 180–186",
+   "cite": "Election Judge Manual, pp. 104–105, 180–186",
    "tab": "special",
    "blocks": [
     {
@@ -678,7 +678,7 @@
   },
   "assistance": {
    "title": "Voter assistance",
-   "cite": "Manual 101, 108, 187–188",
+   "cite": "Election Judge Manual, pp. 101, 108, 187–188",
    "tab": "special",
    "blocks": [
     {
@@ -708,7 +708,7 @@
   },
   "who-allowed": {
    "title": "Who may be here?",
-   "cite": "Manual 11–16, 189",
+   "cite": "Election Judge Manual, pp. 11–16, 189",
    "tab": "during",
    "blocks": [
     {
@@ -772,7 +772,7 @@
   },
   "equipment": {
    "title": "Equipment quick guides",
-   "cite": "Manual 51–54, 111–114",
+   "cite": "Election Judge Manual, pp. 51–54, 111–114",
    "tab": "special",
    "blocks": [
     {
@@ -800,7 +800,7 @@
   },
   "closing": {
    "title": "Closing the polls",
-   "cite": "Manual 189–232",
+   "cite": "Election Judge Manual, pp. 189–232",
    "tab": "closing",
    "blocks": [
     {
@@ -831,7 +831,7 @@
   },
   "supply-return": {
    "title": "Supply return",
-   "cite": "Manual 20–21, 231–232",
+   "cite": "Election Judge Manual, pp. 20–21, 231–232",
    "tab": "closing",
    "blocks": [
     {
@@ -846,13 +846,19 @@
      ]
     },
     {
+     "t": "alert",
+     "kind": "info",
+     "title": "Confirm with county",
+     "text": "Pay amounts are from the manual and may change. Confirm current rates with the county."
+    },
+    {
      "t": "addr"
     }
    ]
   },
   "about": {
    "title": "About & sources",
-   "cite": "Manual cover",
+   "cite": "Election Judge Manual, cover",
    "tab": "",
    "blocks": [
     {
@@ -863,19 +869,19 @@
  },
  "roles": {
   "title": "Election Judge Roles and Responsibilities",
-  "cite": "Manual 5–9",
+  "cite": "Election Judge Manual, pp. 5–9",
   "intro": [
    {
     "t": "p",
     "text": "Election Judges play a vital role in the Election process. Election Judges are responsible for the administration of Election procedures in the Polling Place on Election Day. Judges work together to ensure that the Election process is administered fairly and in accordance with the law."
    }
   ],
-  "introCite": "Manual 5",
+  "introCite": "Election Judge Manual, p. 5",
   "sections": [
    {
     "id": "qualifications",
     "title": "Qualifications",
-    "cite": "Manual 5",
+    "cite": "Election Judge Manual, p. 5",
     "blocks": [
      {
       "t": "p",
@@ -898,7 +904,7 @@
    {
     "id": "requirements",
     "title": "Requirements To Serve",
-    "cite": "Manual 5",
+    "cite": "Election Judge Manual, p. 5",
     "blocks": [
      {
       "t": "list",
@@ -920,7 +926,7 @@
    {
     "id": "duties",
     "title": "Duties",
-    "cite": "Manual 5",
+    "cite": "Election Judge Manual, p. 5",
     "blocks": [
      {
       "t": "p",
@@ -953,7 +959,7 @@
    {
     "id": "pay",
     "title": "Election Judge Pay",
-    "cite": "Manual 5",
+    "cite": "Election Judge Manual, p. 5",
     "blocks": [
      {
       "t": "list",
@@ -965,13 +971,19 @@
        "Social Security number is required to issue a paycheck.",
        "Paychecks will be mailed 6 – 8 weeks after Election Day."
       ]
+     },
+     {
+      "t": "alert",
+      "kind": "info",
+      "title": "Confirm with county",
+      "text": "Pay amounts are from the manual and may change. Confirm current rates with the county."
      }
     ]
    },
    {
     "id": "bipartisanship",
     "title": "Bipartisanship",
-    "cite": "Manual 6",
+    "cite": "Election Judge Manual, p. 6",
     "blocks": [
      {
       "t": "p",
@@ -993,7 +1005,7 @@
    {
     "id": "no-head-judge",
     "title": "No “Head” Judge",
-    "cite": "Manual 6",
+    "cite": "Election Judge Manual, p. 6",
     "blocks": [
      {
       "t": "p",
@@ -1004,7 +1016,7 @@
    {
     "id": "field-reps",
     "title": "Field Representatives",
-    "cite": "Manual 6",
+    "cite": "Election Judge Manual, p. 6",
     "blocks": [
      {
       "t": "p",
@@ -1017,13 +1029,19 @@
        "Pay: $350 plus mileage for Election Day.",
        "Hours: Election Day starting at 5:00 AM until all designated Polling Places have left to return materials to Election Division on Election Night."
       ]
+     },
+     {
+      "t": "alert",
+      "kind": "info",
+      "title": "Confirm with county",
+      "text": "Pay amounts are from the manual and may change. Confirm current rates with the county."
      }
     ]
    },
    {
     "id": "pickup-judge",
     "title": "Pickup Judge",
-    "cite": "Manual 6",
+    "cite": "Election Judge Manual, p. 6",
     "blocks": [
      {
       "t": "p",
@@ -1037,13 +1055,19 @@
        "Pickup supplies from the Election Division office on the Friday or Saturday before Election Day. Additional Pay $30 .",
        "Return supplies to the Election Division after the polls close with a judge of the opposite party in the same vehicle. Additional Pay $30 ."
       ]
+     },
+     {
+      "t": "alert",
+      "kind": "info",
+      "title": "Confirm with county",
+      "text": "Pay amounts are from the manual and may change. Confirm current rates with the county."
      }
     ]
    },
    {
     "id": "students",
     "title": "Student Election Judges",
-    "cite": "Manual 7",
+    "cite": "Election Judge Manual, p. 7",
     "blocks": [
      {
       "t": "h4",
@@ -1111,7 +1135,7 @@
    {
     "id": "guidelines",
     "title": "Election Judge Guidelines",
-    "cite": "Manual 8",
+    "cite": "Election Judge Manual, p. 8",
     "blocks": [
      {
       "t": "h4",
@@ -1137,7 +1161,7 @@
    {
     "id": "schedule",
     "title": "Schedule and Breaks",
-    "cite": "Manual 8",
+    "cite": "Election Judge Manual, p. 8",
     "blocks": [
      {
       "t": "list",
@@ -1160,7 +1184,7 @@
    {
     "id": "dress-code",
     "title": "Dress Code",
-    "cite": "Manual 8",
+    "cite": "Election Judge Manual, p. 8",
     "blocks": [
      {
       "t": "list",
@@ -1175,7 +1199,7 @@
    {
     "id": "polling-hours",
     "title": "Polling Hours",
-    "cite": "Manual 8",
+    "cite": "Election Judge Manual, p. 8",
     "blocks": [
      {
       "t": "p",
@@ -1186,7 +1210,7 @@
    {
     "id": "conduct",
     "title": "Election Judge Conduct",
-    "cite": "Manual 9",
+    "cite": "Election Judge Manual, p. 9",
     "blocks": [
      {
       "t": "list",
@@ -1211,7 +1235,7 @@
    {
     "id": "voting",
     "title": "Election Judge Voting (Vote Anywhere)",
-    "cite": "Manual 9",
+    "cite": "Election Judge Manual, p. 9",
     "blocks": [
      {
       "t": "p",
@@ -1224,7 +1248,7 @@
  "checklists": {
   "monday": {
    "title": "Monday night checklist",
-   "cite": "Manual 31, 23",
+   "cite": "Election Judge Manual, pp. 31, 23",
    "items": [
     "ESC: verify polling place number and site name; ESC seal # matches the Pickup Judge Envelope (if not, call). Record on Envelope 1; break seal and place it in the envelope.",
     "Tables and chairs for check-in stations, with space between stations.",
@@ -1239,7 +1263,7 @@
   },
   "tuesday": {
    "title": "Tuesday morning checklist",
-   "cite": "Manual 55–56",
+   "cite": "Election Judge Manual, pp. 55–56",
    "items": [
     "Turn on the Division cell phone; raise the volume.",
     "Break ESC seal; verify it matches the Night Before number on Envelope 1 (if not, call). Broken seal into Envelope 1.",
@@ -1254,7 +1278,7 @@
   },
   "closing": {
    "title": "After polls close checklist",
-   "cite": "Manual 190–232",
+   "cite": "Election Judge Manual, pp. 190–232",
    "items": [
     "Get the 4 forms from the Pickup Judge Envelope: Closing Procedures Checklist, Return of Supplies Certification, Official Ballot Record, Election Supply Return Form. (190)",
     "Verity Scan (bipartisan pair): check the ballot box auxiliary compartment, scan any ballots found; close polls; all judges sign the Tally Summary Report → Envelope 1. (200–201)",
@@ -1276,12 +1300,12 @@
  "flows": {
   "checkin": {
    "title": "Check-in triage",
-   "cite": "Manual 117–179",
+   "cite": "Election Judge Manual, pp. 117–179",
    "start": "found",
    "nodes": {
     "found": {
      "q": "Is the voter found on the Poll Pad?",
-     "cite": "Manual 118, 133",
+     "cite": "Election Judge Manual, pp. 118, 133",
      "a": [
       [
        "Yes",
@@ -1295,7 +1319,7 @@
     },
     "notfound": {
      "q": "Not found. Will they register (Election Day registration)?",
-     "cite": "Manual 133, 151",
+     "cite": "Election Judge Manual, pp. 133, 151",
      "help": "First confirm they are not registered elsewhere in DuPage County. Vote Anywhere: other precincts are normal.",
      "a": [
       [
@@ -1310,7 +1334,7 @@
     },
     "status": {
      "q": "Any status flag on the record?",
-     "cite": "Manual 118",
+     "cite": "Election Judge Manual, p. 118",
      "a": [
       [
        "None / active",
@@ -1336,7 +1360,7 @@
     },
     "sig": {
      "q": "Do the signatures match (bipartisan team)?",
-     "cite": "Manual 122, 124",
+     "cite": "Election Judge Manual, pp. 122, 124",
      "a": [
       [
        "Yes",
@@ -1353,43 +1377,43 @@
     "ok": {
      "text": "Both judges initial and SUBMIT. Print the ballot from the Voter Authorization Receipt; verify ballot style matches.",
      "to": "issue-ballot",
-     "cite": "Manual 122–123, 80"
+     "cite": "Election Judge Manual, pp. 122–123, 80"
     },
     "register": {
      "text": "Follow Election Day registration (two physical IDs, no photo ID required).",
      "to": "registration",
-     "cite": "Manual 133–142"
+     "cite": "Election Judge Manual, pp. 133–142"
     },
     "prov": {
      "text": "Process provisionally.",
      "to": "provisional",
-     "cite": "Manual 151"
+     "cite": "Election Judge Manual, p. 151"
     },
     "inactive": {
      "text": "Inactive voters must present ID. Follow the inactive-voter scenarios.",
      "to": "inactive",
-     "cite": "Manual 149–150"
+     "cite": "Election Judge Manual, pp. 149–150"
     },
     "mail": {
      "text": "Follow the mail / early ballot scenarios.",
      "to": "flow:mail",
-     "cite": "Manual 165–179"
+     "cite": "Election Judge Manual, pp. 165–179"
     },
     "sigchal": {
      "text": "Offer: provide one ID with name and address, or vote provisionally.",
      "to": "flow:sig",
-     "cite": "Manual 124"
+     "cite": "Election Judge Manual, p. 124"
     }
    }
   },
   "sig": {
    "title": "Challenged signature",
-   "cite": "Manual 124–132",
+   "cite": "Election Judge Manual, pp. 124–132",
    "start": "id",
    "nodes": {
     "id": {
      "q": "Does the voter have one form of ID with their name and address?",
-     "cite": "Manual 124, 129",
+     "cite": "Election Judge Manual, pp. 124, 129",
      "a": [
       [
        "Yes",
@@ -1405,23 +1429,23 @@
    "outcomes": {
     "id": {
      "text": "Tap SIGNATURE CAPTURE. Voter shows the ID and signs; CONTINUE; judge initials; SUBMIT. Voter Authorization Receipt prints.",
-     "cite": "Manual 129–132"
+     "cite": "Election Judge Manual, pp. 129–132"
     },
     "prov": {
      "text": "Select MARK PROVISIONAL → reason CHALLENGE VOTER → SUBMIT. Then complete Provisional Envelopes 1 and 2.",
      "to": "provisional",
-     "cite": "Manual 125–128"
+     "cite": "Election Judge Manual, pp. 125–128"
     }
    }
   },
   "register": {
    "title": "Register or update",
-   "cite": "Manual 133–148",
+   "cite": "Election Judge Manual, pp. 133–148",
    "start": "elig",
    "nodes": {
     "elig": {
      "q": "All on-screen age and citizenship answers YES?",
-     "cite": "Manual 134",
+     "cite": "Election Judge Manual, p. 134",
      "a": [
       [
        "Yes",
@@ -1435,7 +1459,7 @@
     },
     "addr": {
      "q": "Does the address match in the Poll Pad?",
-     "cite": "Manual 136",
+     "cite": "Election Judge Manual, p. 136",
      "a": [
       [
        "Yes",
@@ -1449,7 +1473,7 @@
     },
     "ids": {
      "q": "Two physical IDs (one: name AND address; other: name OR address)?",
-     "cite": "Manual 139, 146",
+     "cite": "Election Judge Manual, pp. 139, 146",
      "a": [
       [
        "Yes",
@@ -1465,28 +1489,28 @@
    "outcomes": {
     "call": {
      "text": "Call the Election Division for assistance and instruction.",
-     "cite": "Manual 134, 136",
+     "cite": "Election Judge Manual, pp. 134, 136",
      "call": true
     },
     "ok": {
      "text": "Voter signs; judge initials, SUBMIT, ACCEPT; proceed to check-in.",
-     "cite": "Manual 140–142"
+     "cite": "Election Judge Manual, pp. 140–142"
     },
     "prov": {
      "text": "You must select MARK PROVISIONAL.",
      "to": "provisional",
-     "cite": "Manual 142, 148"
+     "cite": "Election Judge Manual, pp. 142, 148"
     }
    }
   },
   "mail": {
    "title": "Mail & early ballots",
-   "cite": "Manual 165–179",
+   "cite": "Election Judge Manual, pp. 165–179",
    "start": "flag",
    "nodes": {
     "flag": {
      "q": "Which flag shows?",
-     "cite": "Manual 118",
+     "cite": "Election Judge Manual, p. 118",
      "a": [
       [
        "Mail ballot issued (red)",
@@ -1504,7 +1528,7 @@
     },
     "issued": {
      "q": "What does the voter want?",
-     "cite": "Manual 166–173",
+     "cite": "Election Judge Manual, pp. 166–173",
      "a": [
       [
        "Drop off voted VBM ballot",
@@ -1529,35 +1553,35 @@
     "drop": {
      "text": "Direct them to the VBM Dropbox (sealed, signed in the red box). Select CLOSE.",
      "to": "dropoff",
-     "cite": "Manual 166"
+     "cite": "Election Judge Manual, p. 166"
     },
     "surr": {
      "text": "Green VOID—SURRENDERED label over flap; into Spoiled Ballot Carrier Pouch; VBM BALLOT SURRENDERED; voter signs affidavit; ISSUE NEW BALLOT. Not provisional.",
-     "cite": "Manual 167–169"
+     "cite": "Election Judge Manual, pp. 167–169"
     },
     "nosurr": {
      "text": "NO VBM BALLOT TO SURRENDER; voter signs affidavit; REGULAR BALLOT. Not provisional.",
-     "cite": "Manual 170–172"
+     "cite": "Election Judge Manual, pp. 170–172"
     },
     "norec": {
      "text": "NO VBM BALLOT RECEIVED; voter signs affidavit; REGULAR BALLOT. Not provisional.",
-     "cite": "Manual 173–175"
+     "cite": "Election Judge Manual, pp. 173–175"
     },
     "disagree": {
      "text": "If the voter disagrees: on Election Day they may vote provisionally (PROCESS PROVISIONALLY). The ballot is reviewed for legitimacy.",
      "to": "provisional",
-     "cite": "Manual 176–179"
+     "cite": "Election Judge Manual, pp. 176–179"
     }
    }
   },
   "who": {
    "title": "Who may be here?",
-   "cite": "Manual 11–16",
+   "cite": "Election Judge Manual, pp. 11–16",
    "start": "who",
    "nodes": {
     "who": {
      "q": "Who is it?",
-     "cite": "Manual 11",
+     "cite": "Election Judge Manual, p. 11",
      "a": [
       [
        "Pollwatcher",
@@ -1579,7 +1603,7 @@
     },
     "pw": {
      "q": "Do they have a signed credential from the County Clerk or State Board of Elections?",
-     "cite": "Manual 13–14",
+     "cite": "Election Judge Manual, pp. 13–14",
      "a": [
       [
        "Yes",
@@ -1595,24 +1619,24 @@
    "outcomes": {
     "pwok": {
      "text": "Take and keep the credential in the Pollwatcher Envelope; have them sign in (and out) on the register. After polls close they may not re-enter.",
-     "cite": "Manual 14"
+     "cite": "Election Judge Manual, p. 14"
     },
     "pwno": {
      "text": "Credentials must be presented and surrendered on entering. Judges by majority may remove unauthorized pollwatchers. Questions: call the Division.",
-     "cite": "Manual 11, 13–14",
+     "cite": "Election Judge Manual, pp. 11, 13–14",
      "call": true
     },
     "media": {
      "text": "Ask for ID and a DuPage County Election Division credential. No ballot photos, no handling equipment, interviews 100+ ft from entrance.",
-     "cite": "Manual 12"
+     "cite": "Election Judge Manual, p. 12"
     },
     "official": {
      "text": "Ask for credentials or identification. They may observe but must not interfere.",
-     "cite": "Manual 11"
+     "cite": "Election Judge Manual, p. 11"
     },
     "elect": {
      "text": "No electioneering within the Campaign Free Zone (100 ft of the polling room). Questions: call the Division.",
-     "cite": "Manual 16",
+     "cite": "Election Judge Manual, p. 16",
      "call": true
     }
    }
