@@ -14,7 +14,11 @@ h3{font-size:var(--fs-xl);line-height:var(--lh-tight);margin:1.2em 0 .4em}
 p,li{max-width:60ch}
 .card{display:block;background:var(--surface);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:16px;margin:0 0 12px;box-shadow:var(--shadow);color:var(--text);text-decoration:none}
 a.card{min-height:64px}
-.cite{display:block;font-size:var(--fs-xs);color:var(--text-muted);font-variant-numeric:tabular-nums;margin-top:8px}
+.cite{display:flex;align-items:flex-start;gap:6px;width:fit-content;max-width:100%;font-size:var(--fs-xs);line-height:1.35;color:var(--text-muted);font-weight:var(--fw-regular);font-variant-numeric:tabular-nums;margin-top:10px;padding:4px 10px 4px 8px;background:var(--surface-2);border-left:3px solid var(--accent);border-radius:var(--radius-sm)}
+.cite-ic{flex:0 0 auto;width:16px;height:16px;margin-top:1px;color:var(--accent)}
+.cite-lbl{font-weight:var(--fw-semibold);color:var(--text)}
+.cite.short{background:none;border-left:0;padding:0;margin-top:6px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .grid .card{margin:0;font-weight:var(--fw-semibold)}
 .unused-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin:12px 0}

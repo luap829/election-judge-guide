@@ -225,11 +225,11 @@
     },
     {
      "t": "p",
-     "text": "When the ballot is printed on the Verity Print, verify that the ballot style matches the Voter Authorization Receipt. If they do not match, contact the Election Division. (Manual 80)"
+     "text": "When the ballot is printed on the Verity Print, verify that the ballot style matches the Voter Authorization Receipt. If they do not match, contact the Election Division. (Manual p. 80)"
     },
     {
      "t": "p",
-     "text": "On the Verity Touch Writer, ensure the ballot style on screen matches the Voter Authorization Receipt; if the precinct is incorrect, select NO, cancel and return to the main menu. (Manual 96)"
+     "text": "On the Verity Touch Writer, ensure the ballot style on screen matches the Voter Authorization Receipt; if the precinct is incorrect, select NO, cancel and return to the main menu. (Manual p. 96)"
     },
     {
      "t": "p",
@@ -246,7 +246,7 @@
      "t": "alert",
      "kind": "warning",
      "title": "No personal phones at workstations",
-     "text": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks. (Manual 9)"
+     "text": "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks. (Manual p. 9)"
     },
     {
      "t": "p",
@@ -254,7 +254,7 @@
     },
     {
      "t": "p",
-     "text": "The Election Division cell phone in the Pickup Judge packet is for contacting the Division (Monday setup, Election Day, supply return). It must be charged, turned on and answered. Any judge may use it. (Manual 8, 28)"
+     "text": "The Election Division cell phone in the Pickup Judge packet is for contacting the Division (Monday setup, Election Day, supply return). It must be charged, turned on and answered. Any judge may use it. (Manual pp. 8, 28)"
     },
     {
      "t": "alert",
@@ -317,9 +317,9 @@
      "items": [
       "All judges arrive by 5:00 AM.",
       "ALL judges take the Oath of Office and sign in on a Poll Pad. Failure to sign in delays payment.",
-      "At least one complete set (Poll Pad, Verity Print and Ballot Printer) MUST be set up by 6:00 AM. (Manual 56)",
-      "Poll Pads may NOT be set up until Election morning. (Manual 57)",
-      "General election: the judge prints the Zero Report when opening the polls; all judges sign it; it goes in Election Results Envelope 1. (Manual 24)"
+      "At least one complete set (Poll Pad, Verity Print and Ballot Printer) MUST be set up by 6:00 AM. (Manual p. 56)",
+      "Poll Pads may NOT be set up until Election morning. (Manual p. 57)",
+      "General election: the judge prints the Zero Report when opening the polls; all judges sign it; it goes in Election Results Envelope 1. (Manual p. 24)"
      ]
     },
     {
@@ -343,17 +343,17 @@
      "t": "alert",
      "kind": "warning",
      "title": "Never ask for ID to check in",
-     "text": "Illinois law does not require voters to present ID. If a voter offers one, tell them Illinois does not require ID. If ID is required, the Poll Pad will prompt you. (Manual 117)"
+     "text": "Illinois law does not require voters to present ID. If a voter offers one, tell them Illinois does not require ID. If ID is required, the Poll Pad will prompt you. (Manual p. 117)"
     },
     {
      "t": "steps",
      "items": [
-      "Search by the first three letters of the voter's first and last name; tap search. (118)",
-      "Select the voter. Watch for status flags: inactive, mail ballot issued, mail ballot returned, voted early. (118)",
-      "Verify name, date of birth and address; press REGULAR BALLOT. (119) General election: no party selection.",
-      "Rotate the Poll Pad to the voter. Voter confirms name and address and signs with the stylus (signature on file). Rotate back; DONE SIGNING. (121)",
-      "Bipartisan team verifies the information and that the signatures match; both judges initial; press SUBMIT. (122)",
-      "Voter Authorization Receipt prints; use it to print the ballot on the Verity Print or Touch Writer. Afterward place receipts in the Voter Authorization Receipt Box. (123)"
+      "Search by the first three letters of the voter's first and last name; tap search. (Manual p. 118)",
+      "Select the voter. Watch for status flags: inactive, mail ballot issued, mail ballot returned, voted early. (Manual p. 118)",
+      "Verify name, date of birth and address; press REGULAR BALLOT. (Manual p. 119) General election: no party selection.",
+      "Rotate the Poll Pad to the voter. Voter confirms name and address and signs with the stylus (signature on file). Rotate back; DONE SIGNING. (Manual p. 121)",
+      "Bipartisan team verifies the information and that the signatures match; both judges initial; press SUBMIT. (Manual p. 122)",
+      "Voter Authorization Receipt prints; use it to print the ballot on the Verity Print or Touch Writer. Afterward place receipts in the Voter Authorization Receipt Box. (Manual p. 123)"
      ]
     },
     {
@@ -380,8 +380,8 @@
       "Verify the correct precinct and language are displayed. Select Yes, Print the ballot.",
       "Verify the ballot style matches the Voter Authorization Receipt. If not, contact the Election Division.",
       "Using a blue pen, ONE judge initials the Judge's Initials space at the top of the ballot.",
-      "Offer a Ballot Privacy Cover (English front, Spanish back). (103)",
-      "At the Verity Scan, the voter pulls back the cover to show the judge's initials; once verified, the voter inserts the ballot. Take the cover and hand them an I VOTED sticker. (103)"
+      "Offer a Ballot Privacy Cover (English front, Spanish back). (Manual p. 103)",
+      "At the Verity Scan, the voter pulls back the cover to show the judge's initials; once verified, the voter inserts the ballot. Take the cover and hand them an I VOTED sticker. (Manual p. 103)"
      ]
     }
    ]
@@ -393,26 +393,26 @@
    "blocks": [
     {
      "t": "p",
-     "text": "First check the person is not already registered in DuPage County. On NO RECORDS FOUND, select REGISTER. (133)"
+     "text": "First check the person is not already registered in DuPage County. On NO RECORDS FOUND, select REGISTER. (Manual p. 133)"
     },
     {
      "t": "alert",
      "kind": "info",
      "title": "Two physical IDs — no photo ID required",
-     "text": "1) One with current name AND current address. 2) One with current name OR current address. Info on a phone or tablet cannot be accepted. (133, 139)"
+     "text": "1) One with current name AND current address. 2) One with current name OR current address. Info on a phone or tablet cannot be accepted. (Manual pp. 133, 139)"
     },
     {
      "t": "steps",
      "items": [
-      "Eligibility: ask the on-screen age and citizenship questions. All YES → NEXT. Any NO → call the Election Division. (134)",
-      "Enter name and date of birth carefully; NEXT. (135)",
-      "Address: house number + first letters of street; pick the match. No match → check entry, then call. If a ballot-style selection screen appears, go back and re-enter the address (it has not precincted). (136)",
-      "Confirm populated info with the voter; NEXT. (137)",
-      "Voter provides (not shows) an Illinois driver's license number, Illinois state ID number, or last 4 of SSN; type it in. (138)",
-      "Select the two presented ID types; NEXT. (139)",
-      "Voter reviews and signs with legal signature; NEXT. (140)",
-      "Judge initials, SUBMIT, ACCEPT. (141)",
-      "IDs provided → proceed to check-in. IDs NOT provided → you must select MARK PROVISIONAL. (142)"
+      "Eligibility: ask the on-screen age and citizenship questions. All YES → NEXT. Any NO → call the Election Division. (Manual p. 134)",
+      "Enter name and date of birth carefully; NEXT. (Manual p. 135)",
+      "Address: house number + first letters of street; pick the match. No match → check entry, then call. If a ballot-style selection screen appears, go back and re-enter the address (it has not precincted). (Manual p. 136)",
+      "Confirm populated info with the voter; NEXT. (Manual p. 137)",
+      "Voter provides (not shows) an Illinois driver's license number, Illinois state ID number, or last 4 of SSN; type it in. (Manual p. 138)",
+      "Select the two presented ID types; NEXT. (Manual p. 139)",
+      "Voter reviews and signs with legal signature; NEXT. (Manual p. 140)",
+      "Judge initials, SUBMIT, ACCEPT. (Manual p. 141)",
+      "IDs provided → proceed to check-in. IDs NOT provided → you must select MARK PROVISIONAL. (Manual p. 142)"
      ]
     },
     {
@@ -430,12 +430,12 @@
     {
      "t": "steps",
      "items": [
-      "Locate the voter. If moved or name changed, select RE-REGISTER. (143)",
-      "Select UPDATE REGISTRATION. (144)",
-      "Update name and/or address; NEXT. (145)",
-      "Two physical IDs (one current name AND address; one current name OR address). No photo ID required. Select ID types. (146)",
-      "Review, judge initials, SUBMIT, ACCEPT. (147)",
-      "IDs provided → check-in. Not provided → you must MARK PROVISIONAL. (148)"
+      "Locate the voter. If moved or name changed, select RE-REGISTER. (Manual p. 143)",
+      "Select UPDATE REGISTRATION. (Manual p. 144)",
+      "Update name and/or address; NEXT. (Manual p. 145)",
+      "Two physical IDs (one current name AND address; one current name OR address). No photo ID required. Select ID types. (Manual p. 146)",
+      "Review, judge initials, SUBMIT, ACCEPT. (Manual p. 147)",
+      "IDs provided → check-in. Not provided → you must MARK PROVISIONAL. (Manual p. 148)"
      ]
     }
    ]
@@ -476,7 +476,7 @@
     },
     {
      "t": "h",
-     "text": "Acceptable physical ID (Manual 150)"
+     "text": "Acceptable physical ID (Manual p. 150)"
     },
     {
      "t": "list",
@@ -524,21 +524,21 @@
     {
      "t": "steps",
      "items": [
-      "Judge processes voter in Poll Pad (PROCESS PROVISIONALLY → verify → OK; voter signs; two judges, one per party, verify, initial, SUBMIT). Provisional Receipt prints. (152–156)",
-      "Supplies: Provisional Voting Supplies Envelope in the Supply Box in the ESC. (157)",
-      "Voter completes and signs the green sections of PROVISIONAL AFFIDAVIT ENVELOPE 1; judge completes and signs the blue sections (Poll ID, township, precinct from the receipt; reasons). General election: leave the party line blank. (158–162)",
-      "Scan the Provisional Receipt to print the provisional ballot. Give the voter the ballot and SECRECY PROVISIONAL ENVELOPE 2. (163)",
-      "Voter votes, folds, seals the ballot in Envelope 2, returns it. Do NOT feed into Verity Scan or ballot box. (163)",
-      "Judge completes Envelope 2 (Poll ID, township, precinct, 4-digit provisional ballot style). (163)",
-      "Give the voter the Provisional Affidavit copy from inside Envelope 1. (164)",
-      "Put sealed Envelope 2 and the Provisional Receipt into Envelope 1; seal it; place in the PROVISIONAL BALLOT CARRIER POUCH. (164)"
+      "Judge processes voter in Poll Pad (PROCESS PROVISIONALLY → verify → OK; voter signs; two judges, one per party, verify, initial, SUBMIT). Provisional Receipt prints. (Manual pp. 152–156)",
+      "Supplies: Provisional Voting Supplies Envelope in the Supply Box in the ESC. (Manual p. 157)",
+      "Voter completes and signs the green sections of PROVISIONAL AFFIDAVIT ENVELOPE 1; judge completes and signs the blue sections (Poll ID, township, precinct from the receipt; reasons). General election: leave the party line blank. (Manual pp. 158–162)",
+      "Scan the Provisional Receipt to print the provisional ballot. Give the voter the ballot and SECRECY PROVISIONAL ENVELOPE 2. (Manual p. 163)",
+      "Voter votes, folds, seals the ballot in Envelope 2, returns it. Do NOT feed into Verity Scan or ballot box. (Manual p. 163)",
+      "Judge completes Envelope 2 (Poll ID, township, precinct, 4-digit provisional ballot style). (Manual p. 163)",
+      "Give the voter the Provisional Affidavit copy from inside Envelope 1. (Manual p. 164)",
+      "Put sealed Envelope 2 and the Provisional Receipt into Envelope 1; seal it; place in the PROVISIONAL BALLOT CARRIER POUCH. (Manual p. 164)"
      ]
     },
     {
      "t": "alert",
      "kind": "warning",
      "title": "Envelopes 1 and 2 must be complete",
-     "text": "Or the ballot may not be counted. Voters processed provisionally for missing/invalid ID have 7 days to bring ID to the Election Division. (151, 156)"
+     "text": "Or the ballot may not be counted. Voters processed provisionally for missing/invalid ID have 7 days to bring ID to the Election Division. (Manual pp. 151, 156)"
     }
    ]
   },
@@ -549,7 +549,7 @@
    "blocks": [
     {
      "t": "p",
-     "text": "A red MAIL BALLOT ISSUED flag means a VBM ballot was issued but not returned. (165)"
+     "text": "A red MAIL BALLOT ISSUED flag means a VBM ballot was issued but not returned. (Manual p. 165)"
     },
     {
      "t": "table",
@@ -560,27 +560,27 @@
       ],
       [
        "Wants to drop off voted VBM ballot",
-       "Direct them to the VBM Dropbox (sealed, signed in red box). Select CLOSE. (166)"
+       "Direct them to the VBM Dropbox (sealed, signed in red box). Select CLOSE. (Manual p. 166)"
       ],
       [
        "Has VBM ballot, wants to vote in person",
-       "Take ballot+envelope, green VOID—SURRENDERED label over flap, into SPOILED BALLOT CARRIER POUCH; select VBM BALLOT SURRENDERED; voter signs Surrendered Ballot Affidavit; ISSUE NEW BALLOT. (167–169)"
+       "Take ballot+envelope, green VOID—SURRENDERED label over flap, into SPOILED BALLOT CARRIER POUCH; select VBM BALLOT SURRENDERED; voter signs Surrendered Ballot Affidavit; ISSUE NEW BALLOT. (Manual pp. 167–169)"
       ],
       [
        "Doesn't have it with them",
-       "NO VBM BALLOT TO SURRENDER; voter signs affidavit; REGULAR BALLOT. (170–172)"
+       "NO VBM BALLOT TO SURRENDER; voter signs affidavit; REGULAR BALLOT. (Manual pp. 170–172)"
       ],
       [
        "Says never received it",
-       "NO VBM BALLOT RECEIVED; voter signs affidavit; REGULAR BALLOT. (173–175)"
+       "NO VBM BALLOT RECEIVED; voter signs affidavit; REGULAR BALLOT. (Manual pp. 173–175)"
       ],
       [
        "Red MAIL BALLOT RETURNED, voter disagrees",
-       "Election Day: may vote provisionally (PROCESS PROVISIONALLY). (176–177)"
+       "Election Day: may vote provisionally (PROCESS PROVISIONALLY). (Manual pp. 176–177)"
       ],
       [
        "Green VOTED EARLY, voter disagrees",
-       "Election Day: may vote provisionally. (178–179)"
+       "Election Day: may vote provisionally. (Manual pp. 178–179)"
       ]
      ]
     },
@@ -588,7 +588,7 @@
      "t": "alert",
      "kind": "warning",
      "title": "Surrender / no-ballot affidavits are NOT provisional",
-     "text": "Do not issue a provisional ballot or use provisional envelopes. (169, 171, 174)"
+     "text": "Do not issue a provisional ballot or use provisional envelopes. (Manual pp. 169, 171, 174)"
     },
     {
      "t": "link",
@@ -609,7 +609,7 @@
    "blocks": [
     {
      "t": "p",
-     "text": "On Election Day a Vote-By-Mail Drop Box is inside each polling place for completed, sealed and signed VBM ballot envelopes dropped off by the voter or a designee. (99)"
+     "text": "On Election Day a Vote-By-Mail Drop Box is inside each polling place for completed, sealed and signed VBM ballot envelopes dropped off by the voter or a designee. (Manual p. 99)"
     },
     {
      "t": "h",
@@ -621,18 +621,18 @@
       "Direct them to place it in the VBM Dropbox.",
       "The ballot must be sealed in its VBM ballot envelope.",
       "The voter must sign the envelope in the red signature-required box.",
-      "On the Poll Pad (if checked in), select CLOSE. (166)"
+      "On the Poll Pad (if checked in), select CLOSE. (Manual p. 166)"
      ]
     },
     {
      "t": "alert",
      "kind": "warning",
      "title": "Do not",
-     "text": "Open VBM envelopes or scan VBM ballots. They are verified, processed and counted at the Election Division. (166)"
+     "text": "Open VBM envelopes or scan VBM ballots. They are verified, processed and counted at the Election Division. (Manual p. 166)"
     },
     {
      "t": "h",
-     "text": "After polls close (Manual 198, 229)"
+     "text": "After polls close (Manual pp. 198, 229)"
     },
     {
      "t": "p",
@@ -662,17 +662,17 @@
     {
      "t": "steps",
      "items": [
-      "Look up the voter's check-in record (first 3 letters of last and first name). Status shows Voted in green. Tap the gear icon. (180)",
-      "Select SPOIL BALLOT. (181)",
-      "Choose the ballot to spoil (below the voter's name), choose the reason, select SPOIL BALLOT. (182, 184)",
-      "A new Voter Authorization Receipt prints. Scan its barcode with the Verity Print hand scanner, initial the ballot, give it to the voter; receipt goes in the receipt box. (185)",
-      "Write SPOILED across the top of the old ballot. Voter places it in the VOTER'S SPOILED BALLOT SECURITY ENVELOPE. (186)",
-      "Write the ballot style in the red box; place the envelope in the SPOILED BALLOT CARRIER POUCH. (186)"
+      "Look up the voter's check-in record (first 3 letters of last and first name). Status shows Voted in green. Tap the gear icon. (Manual p. 180)",
+      "Select SPOIL BALLOT. (Manual p. 181)",
+      "Choose the ballot to spoil (below the voter's name), choose the reason, select SPOIL BALLOT. (Manual pp. 182, 184)",
+      "A new Voter Authorization Receipt prints. Scan its barcode with the Verity Print hand scanner, initial the ballot, give it to the voter; receipt goes in the receipt box. (Manual p. 185)",
+      "Write SPOILED across the top of the old ballot. Voter places it in the VOTER'S SPOILED BALLOT SECURITY ENVELOPE. (Manual p. 186)",
+      "Write the ballot style in the red box; place the envelope in the SPOILED BALLOT CARRIER POUCH. (Manual p. 186)"
      ]
     },
     {
      "t": "p",
-     "text": "After polls close: record totals, seal, sign and date the Spoiled Ballot Carrier Pouch; place it in the Blue Rolling Case. (105)"
+     "text": "After polls close: record totals, seal, sign and date the Spoiled Ballot Carrier Pouch; place it in the Blue Rolling Case. (Manual p. 105)"
     }
    ]
   },
@@ -692,17 +692,17 @@
     {
      "t": "steps",
      "items": [
-      "At check-in, tick the Assistance Required box. (187)",
-      "Choose the reason, enter the assister's name and address, have the assister (not the voter) sign the oath; CONTINUE. (188)"
+      "At check-in, tick the Assistance Required box. (Manual p. 187)",
+      "Choose the reason, enter the assister's name and address, have the assister (not the voter) sign the oath; CONTINUE. (Manual p. 188)"
      ]
     },
     {
      "t": "p",
-     "text": "If assistance is requested after check-in, use the Affidavit of Assisted Voter (Purple Form) from the DURING ELECTION envelope; return it in Envelope 2. (108)"
+     "text": "If assistance is requested after check-in, use the Affidavit of Assisted Voter (Purple Form) from the DURING ELECTION envelope; return it in Envelope 2. (Manual p. 108)"
     },
     {
      "t": "p",
-     "text": "ADA parking kits, alternative-entrance and doorbell kits are issued to some polling places only. (101)"
+     "text": "ADA parking kits, alternative-entrance and doorbell kits are issued to some polling places only. (Manual p. 101)"
     }
    ]
   },
@@ -731,7 +731,7 @@
     },
     {
      "t": "h",
-     "text": "Pollwatchers (13–15)"
+     "text": "Pollwatchers (Manual pp. 13–15)"
     },
     {
      "t": "list",
@@ -745,7 +745,7 @@
     },
     {
      "t": "h",
-     "text": "Media (12)"
+     "text": "Media (Manual p. 12)"
     },
     {
      "t": "list",
@@ -757,15 +757,15 @@
     },
     {
      "t": "h",
-     "text": "Campaign Free Zone (16)"
+     "text": "Campaign Free Zone (Manual p. 16)"
     },
     {
      "t": "list",
      "items": [
       "No electioneering within 100 feet of the polling room — if that ends inside the building, none inside the building.",
-      "Place blue NO ELECTIONEERING cones outside the front door / 100 feet from the room entrance (100).",
+      "Place blue NO ELECTIONEERING cones outside the front door / 100 feet from the room entrance (Manual page 100).",
       "Private sites may make their whole property campaign-free (shield sign); don't remove those signs.",
-      "Write-in candidate listing: on the check-in table for voters who ask; do not copy or post it. (26)"
+      "Write-in candidate listing: on the check-in table for voters who ask; do not copy or post it. (Manual p. 26)"
      ]
     }
    ]
@@ -784,10 +784,10 @@
     {
      "t": "list",
      "items": [
-      "Poll Pads may NOT be set up until Election morning. (57, 111)",
-      "Do not hang Quick Guide setup instructions in the polling place. (51)",
-      "Ballot style doesn't match the Voter Authorization Receipt → call the Election Division. (80)",
-      "Don't remove a Verity tablet until the unit is fully powered down. (202, 208, 216)"
+      "Poll Pads may NOT be set up until Election morning. (Manual pp. 57, 111)",
+      "Do not hang Quick Guide setup instructions in the polling place. (Manual p. 51)",
+      "Ballot style doesn't match the Voter Authorization Receipt → call the Election Division. (Manual p. 80)",
+      "Don't remove a Verity tablet until the unit is fully powered down. (Manual pp. 202, 208, 216)"
      ]
     },
     {
@@ -805,17 +805,17 @@
    "blocks": [
     {
      "t": "p",
-     "text": "At 7:00 PM one judge announces loudly, \"THE POLLS ARE NOW CLOSED.\" One judge stands behind the last voter in line. Anyone in line may vote and is processed normally; voters arriving after 7:00 PM may not vote. (189)"
+     "text": "At 7:00 PM one judge announces loudly, \"THE POLLS ARE NOW CLOSED.\" One judge stands behind the last voter in line. Anyone in line may vote and is processed normally; voters arriving after 7:00 PM may not vote. (Manual p. 189)"
     },
     {
      "t": "p",
-     "text": "After the last vote, only judges, credentialed pollwatchers, law enforcement, and Election Division / State Board / State's Attorney / Attorney General representatives may remain. (189)"
+     "text": "After the last vote, only judges, credentialed pollwatchers, law enforcement, and Election Division / State Board / State's Attorney / Attorney General representatives may remain. (Manual p. 189)"
     },
     {
      "t": "alert",
      "kind": "info",
      "title": "Codes are not in this app",
-     "text": "The Close Polls Code is in the Judges' Pickup Envelope. Pollwatchers requesting reports must contact the Election Division; reports are not printed for them. (201)"
+     "text": "The Close Polls Code is in the Judges' Pickup Envelope. Pollwatchers requesting reports must contact the Election Division; reports are not printed for them. (Manual p. 201)"
     },
     {
      "t": "link",
@@ -838,7 +838,7 @@
      "t": "list",
      "items": [
       "Returned by a bipartisan team (1 Democrat, 1 Republican) in the same vehicle. High school student judges may not return supplies.",
-      "Cell phone turned on; the passenger keeps the orange cell phone pouch. (29)",
+      "Cell phone turned on; the passenger keeps the orange cell phone pouch. (Manual p. 29)",
       "Hand-return: Verity Scan unit, orange cell phone pouch, Blue Rolling Case (see the Return of Supplies Certification).",
       "White ballot delivery case(s) with voted ballots go in the locked compartment of the ESC — not the rolling case.",
       "Both returning judges sign the Election Supply Return Form ($30 each; incomplete forms delay or forfeit payment).",
@@ -1252,13 +1252,13 @@
    "items": [
     "ESC: verify polling place number and site name; ESC seal # matches the Pickup Judge Envelope (if not, call). Record on Envelope 1; break seal and place it in the envelope.",
     "Tables and chairs for check-in stations, with space between stations.",
-    "Voting booths out of ESC; spaced apart, voter's back to the wall; 1–2 on a table. (32)",
+    "Voting booths out of ESC; spaced apart, voter's back to the wall; 1–2 on a table. (Manual p. 32)",
     "ADA booth (gray box): follow the ADA Booth Setup Guide.",
     "Verity Touch Writer booth and printer table: follow its setup guide.",
     "Ballot box and ballot bag: follow the setup guide.",
     "Extension cords, USB, power strips: plug in and confirm working outlets (light on). Purple Hart supplies bag into place.",
     "Hang posters from the For Setup envelope. The During envelope is ONLY for Tuesday. (Remaining items on this step are illegible in the source scan — check the paper checklist.)",
-    "New seal from the Keys and Seals Carrier Pouch; record as NIGHT BEFORE seal on Envelope 1; Envelope 1 into ESC; close, lock, and seal the ESC. (23)"
+    "New seal from the Keys and Seals Carrier Pouch; record as NIGHT BEFORE seal on Envelope 1; Envelope 1 into ESC; close, lock, and seal the ESC. (Manual p. 23)"
    ]
   },
   "tuesday": {
@@ -1271,7 +1271,7 @@
     "At least one complete set (Poll Pad, Verity Print, ballot printer) up by 6:00 AM.",
     "Complete the Certificate of Inspection (OPEN FIRST white case); into Envelope 1.",
     "Set up Verity Print + printer, Verity Scan, Verity Touch Writer + printer (During Envelope guides). Record seal numbers on Envelope 1; signed Zero Report into Envelope 1.",
-    "VBM drop box: blue rolling case empty, near check-in, chained to a heavy object and locked, zipped and sealed (record seal # on Envelope 1), ballot slot open. (99)",
+    "VBM drop box: blue rolling case empty, near check-in, chained to a heavy object and locked, zipped and sealed (record seal # on Envelope 1), ballot slot open. (Manual p. 99)",
     "Entrance: American flag, exterior A-frame sign, No Electioneering cone(s).",
     "6:00 AM: open the doors and announce the polls are open."
    ]
@@ -1280,20 +1280,20 @@
    "title": "After polls close checklist",
    "cite": "Election Judge Manual, pp. 190–232",
    "items": [
-    "Get the 4 forms from the Pickup Judge Envelope: Closing Procedures Checklist, Return of Supplies Certification, Official Ballot Record, Election Supply Return Form. (190)",
-    "Verity Scan (bipartisan pair): check the ballot box auxiliary compartment, scan any ballots found; close polls; all judges sign the Tally Summary Report → Envelope 1. (200–201)",
-    "Power down Verity Scan fully before removing the tablet; return the Scan unit on election night — not in the ESC. (202–204)",
-    "Ballot box: remove voted ballots, pack in white transfer case(s), seal with filament tape, both judges sign/date; into the locked ESC shelf. (205)",
-    "Verity Print: print Ballot Count Report (total → OBR; report → Envelope 1); power down; pack. (208–212)",
-    "Touch Writer: record ballot total on OBR; close polls; Close Polls Report → Envelope 1; power down; pack. (214–220)",
-    "Poll Pad: print Summary Report → Envelope 1; power off and pack the case. (222–226)",
-    "Voter Authorization Receipts → carrier pouch; one judge per party signs and dates; seal; into Blue Rolling Case. (197)",
-    "Empty VBM drop box (bipartisan); label envelopes; VBM Carrier Pouch; seal, sign; into Blue Rolling Case. (198, 229)",
-    "Spoiled Ballot Carrier Pouch: totals, seal, sign, date; into Blue Rolling Case. (105)",
-    "Complete the Official Ballot Record; all judges sign with time; into Envelope 2. (22)",
-    "Complete forms for Envelope 2 (incl. Pollwatcher Envelope), check boxes; into Blue Rolling Case. (14, 196)",
-    "Disassemble booths; pack signs, cones, flag, kits into the ESC. (227–230)",
-    "Bipartisan return of supplies with the certification and return form. (231–232)"
+    "Get the 4 forms from the Pickup Judge Envelope: Closing Procedures Checklist, Return of Supplies Certification, Official Ballot Record, Election Supply Return Form. (Manual p. 190)",
+    "Verity Scan (bipartisan pair): check the ballot box auxiliary compartment, scan any ballots found; close polls; all judges sign the Tally Summary Report → Envelope 1. (Manual pp. 200–201)",
+    "Power down Verity Scan fully before removing the tablet; return the Scan unit on election night — not in the ESC. (Manual pp. 202–204)",
+    "Ballot box: remove voted ballots, pack in white transfer case(s), seal with filament tape, both judges sign/date; into the locked ESC shelf. (Manual p. 205)",
+    "Verity Print: print Ballot Count Report (total → OBR; report → Envelope 1); power down; pack. (Manual pp. 208–212)",
+    "Touch Writer: record ballot total on OBR; close polls; Close Polls Report → Envelope 1; power down; pack. (Manual pp. 214–220)",
+    "Poll Pad: print Summary Report → Envelope 1; power off and pack the case. (Manual pp. 222–226)",
+    "Voter Authorization Receipts → carrier pouch; one judge per party signs and dates; seal; into Blue Rolling Case. (Manual p. 197)",
+    "Empty VBM drop box (bipartisan); label envelopes; VBM Carrier Pouch; seal, sign; into Blue Rolling Case. (Manual pp. 198, 229)",
+    "Spoiled Ballot Carrier Pouch: totals, seal, sign, date; into Blue Rolling Case. (Manual p. 105)",
+    "Complete the Official Ballot Record; all judges sign with time; into Envelope 2. (Manual p. 22)",
+    "Complete forms for Envelope 2 (incl. Pollwatcher Envelope), check boxes; into Blue Rolling Case. (Manual pp. 14, 196)",
+    "Disassemble booths; pack signs, cones, flag, kits into the ESC. (Manual pp. 227–230)",
+    "Bipartisan return of supplies with the certification and return form. (Manual pp. 231–232)"
    ]
   }
  },
@@ -1644,7 +1644,7 @@
  },
  "flags": {
   "timeSensitive": [
-   "Party selection is for primaries only; hidden for the general election (Manual 120, 153, 162, 183).",
+   "Party selection is for primaries only; hidden for the general election (Manual pp. 120, 153, 162, 183).",
    "Write-in list, ballot styles, extended hours, early voting, device firmware steps, manual version."
   ],
   "precinctLocal": [

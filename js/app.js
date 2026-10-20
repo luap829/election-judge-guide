@@ -35,9 +35,18 @@
   }
 
   /* ---------- helpers ---------- */
-  /* keep "p. 12" and ranges like "151–164" unbroken so source-named citations stay compact on phones */
-  const citeText = (c) => esc(c).replace(/\b(pp?)\. /g, '$1.\u00A0').replace(/(\d+–\d+)/g, '<span class="nw">$1</span>');
-  const cite = (c) => c ? `<span class="cite">${citeText(c)}</span>` : '';
+  /* Citation = a page in the printed Election Judge Manual (printed footer numbers).
+     Full form: book icon + "Source: Election Judge Manual, p. 10". Compact form (buttons/link cards):
+     book icon + "Manual p. 10" / "Manual pp. 151–164". Screen readers always hear "Election Judge Manual, page 10". */
+  const BOOK = '<svg class="cite-ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="16" height="16"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5M8 7h8M8 10.5h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  /* Visible text uses the short form ("p. 9", "pp. 151–164"); screen readers hear "page 9", "pages 151–164". */
+  const longForm = (t) => t.replace(/\bpp\. /g, 'pages ').replace(/\bp\. /g, 'page ');
+  const nw = (h) => h.replace(/\b(pp?\.|pages?) /g, '$1\u00A0').replace(/(\d+–\d+)/g, '<span class="nw">$1</span>');
+  const cite = (c) => c ? `<span class="cite">${BOOK}<span aria-hidden="true"><span class="cite-lbl">Source:</span> ${nw(esc(c))}</span><span class="sr">Source: ${esc(longForm(c))}</span></span>` : '';
+  /* Buttons/cards: visible "Manual p. 12" / "Manual pp. 151–164"; screen readers hear "Election Judge Manual, page 12". */
+  const citeShort = (c) => c ? `<span class="cite short">${BOOK}<span aria-hidden="true">${nw(esc(c.replace(/^Election Judge Manual, /, 'Manual ')))}</span><span class="sr">${esc(longForm(c))}</span></span>` : '';
+  /* Body text: "(Manual p. 80)" shown as-is; screen readers hear "Election Judge Manual, page 80". */
+  const tx = (s) => esc(s).replace(/\(Manual ((?:pp?\.|pages?) [^)]+)\)/g, (_, r) => `(<span aria-hidden="true">Manual ${nw(r)}</span><span class="sr">Election Judge Manual, ${longForm(r)}</span>)`);
   function href(to) { if (to.startsWith('roles/')) return '#/' + to; return href0(to); }
   function href0(to) { if (to.startsWith('check:')) return '#/check/' + to.slice(6); if (to.startsWith('flow:')) return '#/flow/' + to.slice(5); return '#/s/' + to; }
   function titleOf(to) {
@@ -52,19 +61,19 @@
     if (to.startsWith('flow:')) return C.flows[to.slice(5)].cite;
     return C.screens[to].cite;
   }
-  const linkCard = (to, label) => `<a class="card" href="${href(to)}">${esc(label || titleOf(to))}${cite(citeOf(to))}</a>`;
-  function addrHtml() { const j = C.jurisdiction; return `<div class="card">Official county contact (from the manual):<br>${j.address.map(esc).join('<br>')}<br><a href="tel:${esc(j.phone)}">${esc(j.phoneDisplay)}</a>${cite('Election Judge Manual: phone ' + j.phoneCite.replace(/^Election Judge Manual, /, '') + ' · address ' + j.addressCite.replace(/^Election Judge Manual, /, ''))}</div>`; }
-  function listHtml(items) { return `<ul>${items.map((i) => typeof i === 'string' ? `<li>${esc(i)}</li>` : `<li>${esc(i.text)}${listHtml(i.sub)}</li>`).join('')}</ul>`; }
+  const linkCard = (to, label) => `<a class="card" href="${href(to)}">${esc(label || titleOf(to))}${citeShort(citeOf(to))}</a>`;
+  function addrHtml() { const j = C.jurisdiction; return `<div class="card">Official county contact (from the manual):<br>${j.address.map(esc).join('<br>')}<br><a href="tel:${esc(j.phone)}">${esc(j.phoneDisplay)}</a>${cite('Election Judge Manual, phone ' + j.phoneCite.replace(/^Election Judge Manual, /, '') + '; address ' + j.addressCite.replace(/^Election Judge Manual, /, ''))}</div>`; }
+  function listHtml(items) { return `<ul>${items.map((i) => typeof i === 'string' ? `<li>${tx(i)}</li>` : `<li>${tx(i.text)}${listHtml(i.sub)}</li>`).join('')}</ul>`; }
   function block(b) {
     switch (b.t) {
-      case 'p': return `<p>${esc(b.text)}</p>`;
-      case 'h': return `<h3>${esc(b.text)}</h3>`;
+      case 'p': return `<p>${tx(b.text)}</p>`;
+      case 'h': return `<h3>${tx(b.text)}</h3>`;
       case 'list': return listHtml(b.items);
-      case 'h4': return `<h4>${esc(b.text)}</h4>`;
+      case 'h4': return `<h4>${tx(b.text)}</h4>`;
       case 'cite': return cite(b.text);
-      case 'steps': return `<ol class="steps">${b.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
-      case 'alert': return `<div class="alert ${b.kind}" ${b.kind === 'critical' ? 'role="alert"' : ''}><b>${{ info: 'ⓘ ', warning: '⚠ ', critical: '⛔ ' }[b.kind]}${esc(b.title)}</b>${esc(b.text)}</div>`;
-      case 'table': return `<table><thead><tr>${b.rows[0].map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      case 'steps': return `<ol class="steps">${b.items.map((i) => `<li>${tx(i)}</li>`).join('')}</ol>`;
+      case 'alert': return `<div class="alert ${b.kind}" ${b.kind === 'critical' ? 'role="alert"' : ''}><b>${{ info: 'ⓘ ', warning: '⚠ ', critical: '⛔ ' }[b.kind]}${esc(b.title)}</b>${tx(b.text)}</div>`;
+      case 'table': return `<table><thead><tr>${b.rows[0].map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${tx(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
       case 'link': return linkCard(b.to, b.label);
       case 'addr': return addrHtml();
       case 'about': return aboutHtml();
@@ -83,7 +92,7 @@
       ${linkCard('emergency', 'Emergency, weather, injury')}
       ${addrHtml()}
       <h3>Quick tools</h3>
-      <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}${cite(q.cite)}</a>`).join('')}</div>
+      <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}${citeShort(q.cite)}</a>`).join('')}</div>
       <div class="footer"><a class="btn secondary" href="#/s/who-allowed">Who's allowed</a><a class="btn secondary" href="#/search">Search</a><a class="btn secondary" href="#/about">About</a></div>`;
   }
   function phase(id) {
@@ -137,7 +146,7 @@
     const done = store.get('check:' + id, []);
     const cur = c.items.findIndex((_, i) => !done.includes(i));
     view.innerHTML = `<h2>${esc(c.title)}</h2><p class="crumbs">${done.length} of ${c.items.length} done · check-offs stay on this device only</p>
-      ${c.items.map((it, i) => `<div class="check ${done.includes(i) ? 'done' : ''} ${i === cur ? 'current' : ''}" role="checkbox" tabindex="0" aria-checked="${done.includes(i)}" ${i === cur ? 'aria-current="step"' : ''} data-i="${i}"><span class="n">${i + 1}</span><span class="tx">${esc(it)}</span><span class="c"><span>${done.includes(i) ? '✓' : ''}</span></span></div>`).join('')}
+      ${c.items.map((it, i) => `<div class="check ${done.includes(i) ? 'done' : ''} ${i === cur ? 'current' : ''}" role="checkbox" tabindex="0" aria-checked="${done.includes(i)}" ${i === cur ? 'aria-current="step"' : ''} data-i="${i}"><span class="n">${i + 1}</span><span class="tx">${tx(it)}</span><span class="c"><span>${done.includes(i) ? '✓' : ''}</span></span></div>`).join('')}
       ${cite(c.cite)}<button class="btn danger" id="reset">Reset checklist</button>`;
     view.querySelectorAll('.check').forEach((el) => { const tog = () => { const i = +el.dataset.i; const d = store.get('check:' + id, []); store.set('check:' + id, d.includes(i) ? d.filter((x) => x !== i) : d.concat(i)); checklist(id); }; el.onclick = tog; el.onkeydown = (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tog(); } }; });
     $('#reset').onclick = () => { if (confirm('Reset all check-offs for this checklist?')) { store.set('check:' + id, []); checklist(id); } };
@@ -154,12 +163,12 @@
     let html = `<p class="crumbs">${crumbs.map(esc).join(' › ')}</p>`;
     if (node.startsWith('out:')) {
       const o = f.outcomes[node.slice(4)];
-      html += `<div class="card outcome"><h3>Do this</h3><p>${esc(o.text)}</p>${cite(o.cite)}</div>`;
+      html += `<div class="card outcome"><h3>Do this</h3><p>${tx(o.text)}</p>${cite(o.cite)}</div>`;
       if (o.to) html += `<a class="btn primary" href="${href(o.to)}">Open: ${esc(titleOf(o.to))}</a>`;
       if (o.call) html += `<a class="btn secondary" href="tel:${esc(CFG.phone)}">Call ${esc(CFG.phoneDisplay)}</a>`;
     } else {
       const n = f.nodes[node];
-      html += `<div class="card"><h3>${esc(n.q)}</h3>${n.help ? `<p>${esc(n.help)}</p>` : ''}${cite(n.cite)}</div>
+      html += `<div class="card"><h3>${esc(n.q)}</h3>${n.help ? `<p>${tx(n.help)}</p>` : ''}${cite(n.cite)}</div>
         <div class="qa">${n.a.map(([label, to]) => `<a class="btn secondary" href="${base}${steps.concat(to).join('.')}">${esc(label)}</a>`).join('')}</div>`;
     }
     html += `<a class="btn text" href="#/flow/${id}">Start over</a>`;
@@ -177,11 +186,11 @@
   function aboutHtml() {
     const j = C.jurisdiction;
     return `<div class="alert warning"><b>⚠ Unofficial guide</b>${esc(C.notice)}</div>
-      <p><b>Source:</b> ${esc(j.manual)}. Every screen cites the printed manual page.</p>
+      <p><b>Source:</b> ${esc(j.manual)}. Every screen cites the manual page it comes from, using the page numbers printed at the bottom of each manual page.</p>
       <p><b>Election type:</b> ${esc(j.electionType)} — no party selection (primary-only steps are hidden).</p>
       <p><b>Privacy:</b> works fully offline; no accounts, analytics, location or network calls. Checklist check-offs are saved only on this device and can be reset. The app never holds codes, seal numbers, key locations, or voter/judge names.</p>
       <h3>Not covered</h3><ul>${C.flags.excluded.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
-      <h3>Refresh each election</h3><ul>${C.flags.timeSensitive.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+      <h3>Refresh each election</h3><ul>${C.flags.timeSensitive.map((x) => `<li>${tx(x)}</li>`).join('')}</ul>
       <h3>Varies by precinct</h3><ul>${C.flags.precinctLocal.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
       <p>Template: jurisdiction content lives in content.json and county-config.json.</p>
       <button class="btn secondary" id="resetAll">Reset all checklists</button>`;
@@ -189,7 +198,7 @@
   function rolesMenu() {
     const R = C.roles; setTop(R.title, false);
     view.innerHTML = `<h2>${esc(R.title)}</h2>${R.intro.map(block).join('')}${cite(R.introCite)}
-      <nav aria-label="Roles sections">${R.sections.map((s) => `<a class="card rolelink" href="#/roles/${s.id}"><span>${esc(s.title)}</span><span class="cite">${esc(s.cite)}</span></a>`).join('')}</nav>${cite(R.cite)}`;
+      <nav aria-label="Roles sections">${R.sections.map((s) => `<a class="card rolelink" href="#/roles/${s.id}"><span>${esc(s.title)}</span>${citeShort(s.cite)}</a>`).join('')}</nav>${cite(R.cite)}`;
   }
   function roleDetail(id) {
     const s = C.roles.sections.find((x) => x.id === id); if (!s) return notFound();
