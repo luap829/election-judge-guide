@@ -17,7 +17,8 @@
   "pollHours": "6:00 AM – 7:00 PM"
  },
  "splash": {
-  "heading": "Unofficial DuPage Election Judge Field Guide",
+  "heading": "Unofficial DuPage Election Judge Reference Guide",
+  "note": "For study before Election Day, and during meals and breaks away from your workstation. Do not use personal cell phones, laptops or tablets during working hours (Manual p. 9).",
   "title": "Election Judge Conduct",
   "conduct": [
    "Conduct yourself in a professional manner.",
@@ -113,7 +114,7 @@
   },
   {
    "to": "flow:checkin",
-   "label": "Check-in triage",
+   "label": "Check-in walkthrough",
    "cite": "Election Judge Manual, pp. 117–179"
   },
   {
@@ -250,7 +251,7 @@
     },
     {
      "t": "p",
-     "text": "Use this guide to study before Election Day and for quick reference on breaks. The paper manual, quick guides and Pickup Judge materials stay primary at the table."
+     "text": "Use this guide to study before Election Day and during meals and breaks away from your workstation. While working, use the paper manual, quick guides and Pickup Judge materials."
     },
     {
      "t": "p",
@@ -259,8 +260,8 @@
     {
      "t": "alert",
      "kind": "info",
-     "title": "Confirm with county",
-     "text": "Whether reference use of this app at the table is allowed has not been confirmed."
+     "title": "Not for use at your workstation",
+     "text": "Personal phones, including this app, stay put away while you are working (Manual p. 9)."
     }
    ]
   },
@@ -1299,7 +1300,7 @@
  },
  "flows": {
   "checkin": {
-   "title": "Check-in triage",
+   "title": "Check-in walkthrough",
    "cite": "Election Judge Manual, pp. 117–179",
    "start": "found",
    "nodes": {

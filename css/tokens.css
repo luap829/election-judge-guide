@@ -1,4 +1,4 @@
-/* Election Judge Field Guide — design tokens. System fonts only; no external assets.
+/* Election Judge Reference Guide — design tokens. System fonts only; no external assets.
    Theme: follows prefers-color-scheme; override with <html data-theme="light|dark">.
    County accent: set --accent / --on-accent from county-config.json (see design-spec.md §7). */
 :root {

@@ -1,4 +1,4 @@
-/* Election Judge Field Guide app shell. Generic: all jurisdiction content comes from
+/* Election Judge Reference Guide app shell. Generic: all jurisdiction content comes from
    data/content.json and data/county-config.json. No network calls beyond same-origin precached files. */
 'use strict';
 (function () {
@@ -91,7 +91,7 @@
       <div class="tiles">${C.tabs.map((x) => `<a class="tile" href="#/phase/${x.id}">${esc(x.label)}</a>`).join('')}</div>
       ${linkCard('emergency', 'Emergency, weather, injury')}
       ${addrHtml()}
-      <h3>Quick tools</h3>
+      <h3>Key topics</h3>
       <div class="grid">${C.quickTools.map((q) => `<a class="card" href="${href(q.to)}">${esc(q.label)}${citeShort(q.cite)}</a>`).join('')}</div>
       <div class="footer"><a class="btn secondary" href="#/s/who-allowed">Who's allowed</a><a class="btn secondary" href="#/search">Search</a><a class="btn secondary" href="#/about">About</a></div>`;
   }
@@ -130,6 +130,7 @@
   function showSplash() {
     const s = C.splash;
     $('#splashTitle').textContent = s.heading;
+    $('#splashNote').innerHTML = tx(s.note);
     $('#splashQuote').innerHTML = `<h2>${esc(s.title)}</h2>${listHtml(s.conduct)}${cite(s.cite)}`;
     $('#splashGo').textContent = s.button;
     $('#splash').hidden = false; $('#splashGo').focus();
@@ -186,6 +187,7 @@
   function aboutHtml() {
     const j = C.jurisdiction;
     return `<div class="alert warning"><b>⚠ Unofficial guide</b>${esc(C.notice)}</div>
+      <div class="alert info">${tx(C.splash.note)}</div>
       <p><b>Source:</b> ${esc(j.manual)}. Every screen cites the manual page it comes from, using the page numbers printed at the bottom of each manual page.</p>
       <p><b>Election type:</b> ${esc(j.electionType)} — no party selection (primary-only steps are hidden).</p>
       <p><b>Privacy:</b> works fully offline; no accounts, analytics, location or network calls. Checklist check-offs are saved only on this device and can be reset. The app never holds codes, seal numbers, key locations, or voter/judge names.</p>

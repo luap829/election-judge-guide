@@ -1,12 +1,12 @@
 {
- "name": "Unofficial DuPage Election Judge Field Guide",
+ "name": "Unofficial DuPage Election Judge Reference Guide",
  "short_name": "Unofficial DuPage EJ Guide",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
  "background_color": "#0F1318",
  "theme_color": "#0F1318",
- "description": "Unofficial offline field guide for election judges.",
+ "description": "Unofficial offline reference and study guide for election judges.",
  "icons": [
   {
    "src": "icons/icon-192.png",

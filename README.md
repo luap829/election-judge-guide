@@ -1,6 +1,8 @@
-# DuPage Election Judge Field Guide (unofficial draft)
+# DuPage Election Judge Reference Guide (unofficial draft)
 
-An offline field reference for DuPage County, Illinois election judges. It is an installable web app (PWA) for iPhone, iPad, and Android.
+An offline reference and study guide for DuPage County, Illinois election judges. It is an installable web app (PWA) for iPhone, iPad, and Android.
+
+**For study before Election Day, and during meals and breaks away from your workstation.** The Election Judge Manual (p. 9) says: "No use of personal cell phones, laptops, tablets or ear buds during working hours. Personal cell phones may be used away from workstations during meals and breaks."
 
 **UNOFFICIAL DRAFT. Not endorsed by DuPage County, the DuPage County Clerk, or its Election Division.** It is for testing and study only and has not been reviewed by the county. Where this guide and the official Election Judge Manual or county staff differ, follow the manual and the county. Every screen cites a printed page in the Election Judge Manual – Policies and Procedures, DuPage County Clerk Election Division, Updated: November 2026.
 
